@@ -4,7 +4,7 @@ import { FaPhp } from 'react-icons/fa';
 
 const Skills = () => {
     return (
-        <div className="flex flex-col items-center justify-center h-screen bg-killsColor">
+        <div className="flex flex-col items-center justify-center h-screen bg-killsColor mt-20">
             <div className="text-center w-3/4">
                 <h1 className="text-3xl font-bold mb-8 text-boutonBase">Skills</h1>
                 <p className="w-5/6 m-auto text-boutonBase">

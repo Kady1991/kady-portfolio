@@ -1,5 +1,5 @@
 import React from "react";
-import img from "../assets/img/moi4.png";
+import img from "../assets/img/moi.png";
 import SocialIcons from "../layouts/SocialIcons";
 
 
@@ -26,7 +26,7 @@ const Home = () => {
       </div>
 
       <div className="mt-20">
-        <img width={570} src={img} alt="" />
+        <img className="rounded-full" width={570} src={img} alt="" />
       </div>
     </div>
   );
