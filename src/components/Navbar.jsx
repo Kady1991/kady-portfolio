@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-import { Link as ScrollLink } from "react-scroll";
-import { Link as RouterLink, useLocation } from "react-router-dom";
+import { Link as RouterLink, NavLink } from "react-router-dom";
 import { AiOutlineClose } from "react-icons/ai";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
 import img from "../assets/img/1.png";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
-  const location = useLocation();
 
   const handleChange = () => {
     setMenu(!menu);
@@ -28,60 +26,49 @@ const Navbar = () => {
           </div>
 
           <nav className="hidden lg:flex flex-row items-center text-lg font-medium gap-8">
-            <ScrollLink
-              to="home"
-              spy={true}
-              smooth={true}
-              duration={500}
+            <NavLink
+              to="/"
+              exact
               className="hover:text-brightColor transition-all cursor-pointer"
+              activeClassName="text-brightColor"
             >
               Home
-            </ScrollLink>
-            <ScrollLink
-              to="about"
-              spy={true}
-              smooth={true}
-              duration={500}
+            </NavLink>
+            <NavLink
+              to="/apropos"
               className="hover:text-brightColor transition-all cursor-pointer"
+              activeClassName="text-brightColor"
             >
               About me
-            </ScrollLink>
-            <ScrollLink
-              to="services"
-              spy={true}
-              smooth={true}
-              duration={500}
+            </NavLink>
+            <NavLink
+              to="/services"
               className="hover:text-brightColor transition-all cursor-pointer"
+              activeClassName="text-brightColor"
             >
               Services
-            </ScrollLink>
-            <ScrollLink
-              to="education"
-              spy={true}
-              smooth={true}
-              duration={500}
+            </NavLink>
+            <NavLink
+              to="/education"
               className="hover:text-brightColor transition-all cursor-pointer"
+              activeClassName="text-brightColor"
             >
               Education
-            </ScrollLink>
-            <ScrollLink
-              to="experience"
-              spy={true}
-              smooth={true}
-              duration={500}
+            </NavLink>
+            <NavLink
+              to="/experience"
               className="hover:text-brightColor transition-all cursor-pointer"
+              activeClassName="text-brightColor"
             >
               Experience
-            </ScrollLink>
-            <ScrollLink
-              to="portfolio"
-              spy={true}
-              smooth={true}
-              duration={500}
+            </NavLink>
+            <NavLink
+              to="/portfolio"
               className="hover:text-brightColor transition-all cursor-pointer"
+              activeClassName="text-brightColor"
             >
               Portfolio
-            </ScrollLink>
+            </NavLink>
           </nav>
 
           <div className="lg:hidden flex items-center">
@@ -98,66 +85,55 @@ const Navbar = () => {
             menu ? "translate-x-0" : "-translate-x-full"
           } lg:hidden flex flex-col absolute bg-black text-white left-0 top-20 font-semibold text-2xl text-center z-10 pt-8 pb-4 gap-8 w-full h-fit transition-transform duration-300`}
         >
-          <ScrollLink
-            to="home"
-            spy={true}
-            smooth={true}
-            duration={500}
+          <NavLink
+            to="/"
+            exact
             className="hover:text-brightColor transition-all cursor-pointer"
+            activeClassName="text-brightColor"
             onClick={closeMenu}
           >
             Home
-          </ScrollLink>
-          <ScrollLink
-            to="about"
-            spy={true}
-            smooth={true}
-            duration={500}
+          </NavLink>
+          <NavLink
+            to="/about"
             className="hover:text-brightColor transition-all cursor-pointer"
+            activeClassName="text-brightColor"
             onClick={closeMenu}
           >
             About me
-          </ScrollLink>
-          <ScrollLink
-            to="services"
-            spy={true}
-            smooth={true}
-            duration={500}
+          </NavLink>
+          <NavLink
+            to="/services"
             className="hover:text-brightColor transition-all cursor-pointer"
+            activeClassName="text-brightColor"
             onClick={closeMenu}
           >
             Services
-          </ScrollLink>
-          <ScrollLink
-            to="education"
-            spy={true}
-            smooth={true}
-            duration={500}
+          </NavLink>
+          <NavLink
+            to="/education"
             className="hover:text-brightColor transition-all cursor-pointer"
+            activeClassName="text-brightColor"
             onClick={closeMenu}
           >
             Education
-          </ScrollLink>
-          <ScrollLink
-            to="experience"
-            spy={true}
-            smooth={true}
-            duration={500}
+          </NavLink>
+          <NavLink
+            to="/experience"
             className="hover:text-brightColor transition-all cursor-pointer"
+            activeClassName="text-brightColor"
             onClick={closeMenu}
           >
             Experience
-          </ScrollLink>
-          <ScrollLink
-            to="portfolio"
-            spy={true}
-            smooth={true}
-            duration={500}
+          </NavLink>
+          <NavLink
+            to="/portfolio"
             className="hover:text-brightColor transition-all cursor-pointer"
+            activeClassName="text-brightColor"
             onClick={closeMenu}
           >
             Portfolio
-          </ScrollLink>
+          </NavLink>
         </div>
       </div>
     </div>
