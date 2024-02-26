@@ -95,7 +95,7 @@ const Navbar = () => {
             Home
           </NavLink>
           <NavLink
-            to="/about"
+            to="/apropos"
             className="hover:text-brightColor transition-all cursor-pointer"
             activeClassName="text-brightColor"
             onClick={closeMenu}

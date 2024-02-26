@@ -27,7 +27,7 @@ const Education = () => {
     };
 
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen mt-8">
+        <div className="flex flex-col items-center justify-center min-h-screen ">
             <div className="p-6 text-center">
                 <h1 className="text-3xl font-bold mb-4 m-auto font-ligth mb-8 text-boutonBase hover:text-brightColor text-center md:w-1/2">
                     Éducation
