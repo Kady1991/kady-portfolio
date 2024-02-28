@@ -3,16 +3,16 @@ import { IoCodeSlash } from 'react-icons/io5';
 import { Link as RouterLink } from 'react-router-dom';
 
 // Importe les images
-import img1 from '../../assets/img/im1.png';
-import img2 from '../../assets/img/im2.png';
-import img3 from '../../assets/img/im3.png';
-import img4 from '../../assets/img/im4.png';
-import img5 from '../../assets/img/im5.png';
-import img6 from '../../assets/img/im6.png';
+import img1 from '../assets/img/im1.png';
+import img2 from '../assets/img/im2.png';
+import img3 from '../assets/img/im3.png';
+import img4 from '../assets/img/im4.png';
+import img5 from '../assets/img/im5.png';
+import img6 from '../assets/img/im6.png';
 
 const Project = () => {
   const videoUrls = [
-    '/src/assets/videos/LAVIDEO1.mp4',
+    '',
     '/src/assets/videos/LAVIDEO2.mp4',
     '/src/assets/videos/LAVIDEO3.mp4',
     '/src/assets/videos/LAVIDEO4.mp4',
@@ -55,7 +55,7 @@ const Project = () => {
           >
             <a href={videoUrls[index - 1]} target="_blank" rel="noopener noreferrer" className="cursor-pointer">
               <img
-                src={imagePaths[index - 1]}  {/* Utilise le tableau pour sélectionner l'image */}
+                src={imagePaths[index - 1]} 
                 alt={`Projet ${index}`}
                 className="w-2/3 sm:w-full max-w-md h-auto object-cover rounded-lg shadow-lg shadow-nuanceBlack m-1"
               />
@@ -72,7 +72,7 @@ const Project = () => {
           >
             <a href={videoUrls[index - 1]} target="_blank" rel="noopener noreferrer" className="cursor-pointer">
               <img
-                src={imagePaths[index - 1]}  {/* Utilise le tableau pour sélectionner l'image */}
+                src={imagePaths[index - 1]}
                 alt={`Projet ${index}`}
                 className="w-2/3 sm:w-full max-w-md h-auto object-cover rounded-lg shadow-lg shadow-nuanceBlack m-1"
               />
