@@ -1,67 +1,84 @@
-import React, { useState } from 'react';
-import { IoCodeSlash, IoLogoGithub } from 'react-icons/io5';
+import React from 'react';
+import { IoCodeSlash } from 'react-icons/io5';
 import { Link as RouterLink } from 'react-router-dom';
 
+// Importe les images
+import img1 from '../../assets/img/im1.png';
+import img2 from '../../assets/img/im2.png';
+import img3 from '../../assets/img/im3.png';
+import img4 from '../../assets/img/im4.png';
+import img5 from '../../assets/img/im5.png';
+import img6 from '../../assets/img/im6.png';
+
 const Project = () => {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const videoUrls = [
+    '/src/assets/videos/LAVIDEO1.mp4',
+    '/src/assets/videos/LAVIDEO2.mp4',
+    '/src/assets/videos/LAVIDEO3.mp4',
+    '/src/assets/videos/LAVIDEO4.mp4',
+    '/src/assets/videos/LAVIDEO5.mp4',
+    '/src/assets/videos/LAVIDEO6.mp4',
+  ];
+
+  const openGitHub = () => {
+    window.open('https://github.com/Kady1991?tab=repositories', '_blank');
+  };
+
+  // Tableau des chemins d'accès des images
+  const imagePaths = [img1, img2, img3, img4, img5, img6];
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-experience p-8">
-      <div className="lg:w-5/6 flex flex-col lg:flex-row-reverse justify-around mb-8">
-        {/* Container pour le contenu à gauche et les images à droite */}
-        <div className="flex lg:flex-row flex-col lg:mx-2 items-center lg:items-start lg:w-3/4 mb-8 lg:mb-0">
-          {/* Contenu à gauche des images */}
-          <div className="lg:w-1/4">
-            {/* Icône Code au centre */}
-            <div className="flex items-center justify-center mb-4">
-              <span className="text-boutonBase text-8xl">
-                <IoCodeSlash />
-              </span>
-            </div>
-            {/* Titre centré */}
-            <h1 className="text-3xl font-bold mb-3 text-center text-boutonBase hover:text-brightColor">
-              Mes Projets
-            </h1>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-experience p-4 md:p-8 w-90%">
+      <h1 className="text-3xl font-bold mb-3 text-center text-boutonBase hover:text-brightColor">
+        Mes Projets
+      </h1>
 
-            <p className="mb-4 lg:mb-0 text-center text-black text-light lg:text-left w-5/6">
-              Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.
-            </p>
+      <p className="mb-4 text-center text-black text-light w-5/6">
+        Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.
+      </p>
+
+      <div className="flex flex-col items-center mb-4">
+        <button
+          className="bg-boutonBase text-white p-2 rounded-md flex items-center"
+          onClick={openGitHub}
+        >
+          <IoCodeSlash className="text-4xl mr-2" />
+          GitHub
+        </button>
+      </div>
+
+      <div className="flex justify-center w-full">
+        {[1, 2, 3].map((index) => (
+          <div
+            key={index}
+            className="m-2 relative flex flex-col items-center w-1/3"
+          >
+            <a href={videoUrls[index - 1]} target="_blank" rel="noopener noreferrer" className="cursor-pointer">
+              <img
+                src={imagePaths[index - 1]}  {/* Utilise le tableau pour sélectionner l'image */}
+                alt={`Projet ${index}`}
+                className="w-2/3 sm:w-full max-w-md h-auto object-cover rounded-lg shadow-lg shadow-nuanceBlack m-1"
+              />
+            </a>
           </div>
-          {/* Trois images cliquables */}
-          <div className="flex lg:ml-8 w-5/6">
-            {Array.from({ length: 3 }).map((_, index) => (
-              <div
-                key={index}
-                className="mr-4 relative flex flex-col items-center"
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
-              >
-                <RouterLink
-                  to={`/projet${index + 1}`}
-                  className="cursor-pointer"
-                >
-                  <img
-                    src={`/src/assets/img/im${index + 1}.png`}
-                    alt={`Projet ${index + 1}`}
-                    className="w-96 h-96 object-cover rounded-lg shadow-lg shadow-nuanceBlack"
-                  />
-                </RouterLink>
-                {hoveredIndex === index && (
-                  <div className="absolute inset-0 flex items-center justify-center bg-nuanceBlack shadow-lg shadow-nuanceBlack bg-opacity-50 transition duration-300 rounded-lg">
-                    <a
-                      href={`https://github.com/Kady1991${index + 1}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-nuanceViolet text-5xl github-icon"
-                    >
-                      <IoLogoGithub />
-                    </a>
-                  </div>
-                )}
-              </div>
-            ))}
+        ))}
+      </div>
+
+      <div className="flex justify-center mt-2 w-full">
+        {[4, 5, 6].map((index) => (
+          <div
+            key={index}
+            className="m-2 relative flex flex-col items-center w-1/3"
+          >
+            <a href={videoUrls[index - 1]} target="_blank" rel="noopener noreferrer" className="cursor-pointer">
+              <img
+                src={imagePaths[index - 1]}  {/* Utilise le tableau pour sélectionner l'image */}
+                alt={`Projet ${index}`}
+                className="w-2/3 sm:w-full max-w-md h-auto object-cover rounded-lg shadow-lg shadow-nuanceBlack m-1"
+              />
+            </a>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );

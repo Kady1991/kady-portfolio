@@ -1,5 +1,7 @@
 import React from 'react';
-import { FaLinkedin, FaGithub, FaTwitter } from 'react-icons/fa';
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import { SiReact } from 'react-icons/si';
+import { Link as RouterLink } from 'react-router-dom';
 
 const SocialIcons = () => {
   const iconStyle = {
@@ -11,15 +13,15 @@ const SocialIcons = () => {
 
   return (
     <div className="social-icons flex items-center space-x-4 justify-center lg:justify-start mt-8">
-      <a href="lien-vers-votre-profil-linkedin" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.linkedin.com/in/kady-sangare/" target="_blank" rel="noopener noreferrer">
         <FaLinkedin size={46} className={iconStyle.base + ' ' + iconStyle.linkedin} />
       </a>
-      <a href="lien-vers-votre-profil-github" target="_blank" rel="noopener noreferrer">
+      <a href="https://github.com/Kady1991?tab=repositories" target="_blank" rel="noopener noreferrer">
         <FaGithub size={46} className={iconStyle.base + ' ' + iconStyle.github} />
       </a>
-      <a href="lien-vers-votre-profil-twitter" target="_blank" rel="noopener noreferrer">
-        <FaTwitter size={46} className={iconStyle.base + ' ' + iconStyle.twitter} />
-      </a>
+      <RouterLink to="/portfolio">
+        <SiReact size={46} className={iconStyle.base} />
+      </RouterLink>
     </div>
   );
 };
