@@ -12,12 +12,12 @@ import img6 from '../assets/img/im6.png';
 
 const Project = () => {
   const videoUrls = [
-    '',
-    '/src/assets/videos/LAVIDEO2.mp4',
-    '/src/assets/videos/LAVIDEO3.mp4',
-    '/src/assets/videos/LAVIDEO4.mp4',
-    '/src/assets/videos/LAVIDEO5.mp4',
-    '/src/assets/videos/LAVIDEO6.mp4',
+    // '',
+    // '/src/assets/videos/LAVIDEO2.mp4',
+    // '/src/assets/videos/LAVIDEO3.mp4',
+    // '/src/assets/videos/LAVIDEO4.mp4',
+    // '/src/assets/videos/LAVIDEO5.mp4',
+    // '/src/assets/videos/LAVIDEO6.mp4',
   ];
 
   const openGitHub = () => {
