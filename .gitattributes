@@ -1,2 +1,8 @@
 src/assets/videos/*.mp4 filter=lfs diff=lfs merge=lfs -text
 "src/assets/videos/* annex" 
+src/assets/videos/LAVIDEO1.mp4 filter=lfs diff=lfs merge=lfs -text
+src/assets/videos/LAVIDEO2.mp4 filter=lfs diff=lfs merge=lfs -text
+src/assets/videos/LAVIDEO3.mp4 filter=lfs diff=lfs merge=lfs -text
+src/assets/videos/LAVIDEO4.mp4 filter=lfs diff=lfs merge=lfs -text
+src/assets/videos/LAVIDEO5.mp4 filter=lfs diff=lfs merge=lfs -text
+src/assets/videos/LAVIDEO6.mp4 filter=lfs diff=lfs merge=lfs -text
