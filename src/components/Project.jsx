@@ -12,12 +12,7 @@ import img6 from '../assets/img/im6.png';
 
 const Project = () => {
   const videoUrls = [
-    // '',
-    // '/src/assets/videos/LAVIDEO2.mp4',
-    // '/src/assets/videos/LAVIDEO3.mp4',
-    // '/src/assets/videos/LAVIDEO4.mp4',
-    // '/src/assets/videos/LAVIDEO5.mp4',
-    // '/src/assets/videos/LAVIDEO6.mp4',
+  
   ];
 
   const openGitHub = () => {
@@ -33,7 +28,7 @@ const Project = () => {
         Mes Projets
       </h1>
 
-      <p className="mb-4 text-center text-black text-light w-5/6">
+      <p className="mb-4 text-center text-black text-light w-3/6">
         Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.
       </p>
 
