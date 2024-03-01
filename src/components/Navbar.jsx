@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link as RouterLink, NavLink } from "react-router-dom";
 import { AiOutlineClose } from "react-icons/ai";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
-import img from "../assets/img/1.png";
+import img from "../assets/img/loGr.png";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
