@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 
 const SkillItem = ({ icon, label, percentage }) => {
   return (
-    <div className="flex items-center">
-      <div className="w-1/4">{icon}</div>
+    <div className="flex items-center w-5/6">
+      <div className="m-auto">{icon}</div>
       <div className="w-3/4">
         <h3 className="text-lg ">{label}</h3>
-        <div className="w-full bg-barrekills h-3 rounded-md mt-1">
+        <div className="w-full bg-white h-3 rounded-md ">
           <div
             className="bg-nuancebarre h-full rounded-md"
             style={{ width: `${percentage}%` }}
