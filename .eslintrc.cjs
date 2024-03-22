@@ -16,5 +16,9 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    'no-unused-vars': [
+      'error',
+      { 'varsIgnorePattern': '^React$|^RouterLink$' } // Ajoutez cette règle pour ignorer RouterLink
+    ]
   },
 }

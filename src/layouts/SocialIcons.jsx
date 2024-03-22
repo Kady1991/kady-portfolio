@@ -1,4 +1,4 @@
-// import React from 'react';
+import React from 'react';
 import { FaLinkedin, FaGithub, FaPhone, FaEnvelope } from 'react-icons/fa'; // Importez les icônes pour le téléphone et l'e-mail
 import { SiReact } from 'react-icons/si';
 import { Link as RouterLink } from 'react-router-dom';

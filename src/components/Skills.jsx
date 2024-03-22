@@ -1,6 +1,7 @@
 import React from 'react';
 import { SiHtml5, SiCss3, SiJavascript, SiWordpress, SiReact, SiTailwindcss, SiBootstrap, SiGithub } from 'react-icons/si';
 import { FaPhp } from 'react-icons/fa';
+import SkillItem from "../layouts/SkillItem";
 
 const Skills = () => {
     return (
@@ -27,19 +28,6 @@ const Skills = () => {
                     <SkillItem icon={<FaPhp size={50} className="text-iconBrun" />} label="PHP" percentage={60} />
                     <SkillItem icon={<SiGithub size={50} className="text-iconBrun" />} label="GitHub" percentage={75} />
                 </div>
-            </div>
-        </div>
-    );
-};
-
-const SkillItem = ({ icon, label, percentage }) => {
-    return (
-        <div className="flex flex-col items-center animate__animated animate__fadeIn">
-            {icon}
-            <span className="mt-2 text-iconBrun">{label}</span>
-            <div className="bg-white h-4 mt-2 relative w-full">
-                <div className="bg-nuancebarre h-full animate__animated animate__fadeIn" style={{ width: `${percentage}%` }}></div>
-                <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-iconBrun">{percentage}%</span>
             </div>
         </div>
     );
