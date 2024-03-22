@@ -4,10 +4,10 @@ import { FaPhp } from 'react-icons/fa';
 
 const Skills = () => {
     return (
-        <div className="flex flex-col items-center justify-center h-screen bg-killsColor ">
+        <div className="flex flex-col items-center justify-center h-screen bg-brunClaire ">
             <div className="text-center w-3/4">
-                <h1 className="text-3xl font-bold mb-8 text-boutonBase">Skills</h1>
-                <p className="w-5/6 m-auto text-boutonBase">
+                <h1 className="text-3xl font-bold mb-8 text-iconBrun">Skills</h1>
+                <p className="w-5/6 m-auto text-texte">
                     Le composant Skills est une représentation visuelle de mes compétences en développement web. Chaque compétence,
                     telles que HTML, CSS, JavaScript, WordPress, React, Tailwind CSS, Bootstrap et GitHub, est illustrée par une
                     icône reconnaissable. Les barres de progression colorées indiquent le niveau de maîtrise de chaque compétence,
@@ -17,15 +17,15 @@ const Skills = () => {
             </div>
             <div className="w-5/6">
                 <div className="grid grid-cols-3 gap-8 mt-20 mx-0">
-                    <SkillItem icon={<SiHtml5 size={50} className="text-boutonBase" />} label="HTML" percentage={80} />
-                    <SkillItem icon={<SiCss3 size={50} className="text-boutonBase" />} label="CSS" percentage={75} />
-                    <SkillItem icon={<SiJavascript size={50} className="text-boutonBase" />} label="JavaScript" percentage={70} />
-                    <SkillItem icon={<SiWordpress size={50} className="text-boutonBase" />} label="WordPress" percentage={65} />
-                    <SkillItem icon={<SiReact size={50} className="text-boutonBase" />} label="React" percentage={85} />
-                    <SkillItem icon={<SiTailwindcss size={50} className="text-boutonBase" />} label="Tailwind CSS" percentage={60} />
-                    <SkillItem icon={<SiBootstrap size={50} className="text-boutonBase" />} label="Bootstrap" percentage={70} />
-                    <SkillItem icon={<FaPhp size={50} className="text-boutonBase" />} label="PHP" percentage={60} />
-                    <SkillItem icon={<SiGithub size={50} className="text-boutonBase" />} label="GitHub" percentage={75} />
+                    <SkillItem icon={<SiHtml5 size={50} className="text-iconBrun" />} label="HTML" percentage={80} />
+                    <SkillItem icon={<SiCss3 size={50} className="text-iconBrun" />} label="CSS" percentage={75} />
+                    <SkillItem icon={<SiJavascript size={50} className="text-iconBrun" />} label="JavaScript" percentage={70} />
+                    <SkillItem icon={<SiWordpress size={50} className="text-iconBrun" />} label="WordPress" percentage={65} />
+                    <SkillItem icon={<SiReact size={50} className="text-iconBrun" />} label="React" percentage={85} />
+                    <SkillItem icon={<SiTailwindcss size={50} className="text-iconBrun" />} label="Tailwind CSS" percentage={60} />
+                    <SkillItem icon={<SiBootstrap size={50} className="text-iconBrun" />} label="Bootstrap" percentage={70} />
+                    <SkillItem icon={<FaPhp size={50} className="text-iconBrun" />} label="PHP" percentage={60} />
+                    <SkillItem icon={<SiGithub size={50} className="text-iconBrun" />} label="GitHub" percentage={75} />
                 </div>
             </div>
         </div>
@@ -36,10 +36,10 @@ const SkillItem = ({ icon, label, percentage }) => {
     return (
         <div className="flex flex-col items-center animate__animated animate__fadeIn">
             {icon}
-            <span className="mt-2 text-boutonBase">{label}</span>
+            <span className="mt-2 text-iconBrun">{label}</span>
             <div className="bg-white h-4 mt-2 relative w-full">
-                <div className="bg-brightColor h-full animate__animated animate__fadeIn" style={{ width: `${percentage}%` }}></div>
-                <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-boutonBase">{percentage}%</span>
+                <div className="bg-nuancebarre h-full animate__animated animate__fadeIn" style={{ width: `${percentage}%` }}></div>
+                <span className="absolute right-2 top-1/2 transform -translate-y-1/2 text-iconBrun">{percentage}%</span>
             </div>
         </div>
     );

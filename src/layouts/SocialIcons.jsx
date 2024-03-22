@@ -1,11 +1,11 @@
-import React from 'react';
+// import React from 'react';
 import { FaLinkedin, FaGithub, FaPhone, FaEnvelope } from 'react-icons/fa'; // Importez les icônes pour le téléphone et l'e-mail
 import { SiReact } from 'react-icons/si';
 import { Link as RouterLink } from 'react-router-dom';
 
 const SocialIcons = () => {
   const iconStyle = {
-    base: 'text-boutonBase hover:text-brightColor p-2 transition-all cursor-pointer',
+    base: 'text-iconBrun hover:text-hoverBouton p-2 transition-all cursor-pointer',
   };
 
   return (

@@ -54,14 +54,14 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col justify-center lg:flex-row items-center lg:px-32 px-5 bg-white">
+    <div className="min-h-screen flex flex-col justify-center lg:flex-row items-center lg:px-32 px-5 bg-brunClaire">
       <div className="flex flex-col items-center text-center lg:text-start lg:items-start w-full lg:w-1/2 space-y text-animation m-20">
-        <h1 className="text-5xl font-semibold leading-tight mt-24">
+        <h1 className="text-5xl font-semibold text-iconBrun leading-tight mt-24">
           Je suis Kady
-          <span className="block text-brightColor"> Front-end Developer</span>
+          <span className="block text-hoverBouton"> Front-end Developer</span>
         </h1>
-        <p className="text-animation m-auto">
-          J'ai opté pour la passionnante démarche de me former en développement
+        <p className="text-animation m-auto text-texte">
+          J'ai opté pour la passionnante démarche de me former <br/> en développement
           frontend, nourrissant mon intérêt pour la création d'expériences
           utilisateur exceptionnelles.
         </p>

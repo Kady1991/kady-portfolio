@@ -1,5 +1,5 @@
 // Logo.js
-import React from 'react';
+
 import { Link } from 'react-router-dom'; // Importez Link depuis react-router-dom
 import img from '../assets/img/loGr.png';
 

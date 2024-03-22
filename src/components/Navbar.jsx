@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link as RouterLink, NavLink } from "react-router-dom";
 import { AiOutlineClose } from "react-icons/ai";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
-import Logo from "./Logo";
+import Logo from "./Logo";  
 
 
 const Navbar = () => {
@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <div className="fixed w-full z-10">
       <div>
-        <div className="flex flex-row justify-between p-1 md:px-32 px-5 bg-white text-boutonBase text-sm text-bold shadow-[0_3px_10px_rgb(0,0,0,0.2)] ">
+        <div className="flex flex-row justify-between p-1 md:px-32 px-5 bg-white text-iconBrun text-sm text-bold shadow-[0_4px_10px_rgb(0,0,0,0.2)] ">
           <div className="flex flex-row items-center cursor-pointer">
             <h1 className="w-20">
               <Logo />
@@ -30,43 +30,43 @@ const Navbar = () => {
             <NavLink
               to="/"
               exact
-              className="hover:text-brightColor transition-all cursor-pointer"
-              activeClassName="text-brightColor"
+              className="hover:text-hoverNavbar transition-all cursor-pointer"
+              activeclassname="text-hoverNavbar"
             >
               Home
             </NavLink>
             <NavLink
               to="/apropos"
-              className="hover:text-brightColor transition-all cursor-pointer"
-              activeClassName="text-brightColor"
+              className="hover:text-hoverNavbar transition-all cursor-pointer"
+              activeclassname="text-hoverNavbar"
             >
               About me
             </NavLink>
             <NavLink
               to="/services"
-              className="hover:text-brightColor transition-all cursor-pointer"
-              activeClassName="text-brightColor"
+              className="hover:text-hoverNavbar transition-all cursor-pointer"
+              activeclassname="text-hoverNavbar"
             >
               Services
             </NavLink>
             <NavLink
               to="/education"
-              className="hover:text-brightColor transition-all cursor-pointer"
-              activeClassName="text-brightColor"
+              className="hover:text-hoverNavbar transition-all cursor-pointer"
+              activeclassname="text-hoverNavbar"
             >
               Education
             </NavLink>
             <NavLink
               to="/experience"
-              className="hover:text-brightColor transition-all cursor-pointer"
-              activeClassName="text-brightColor"
+              className="hover:text-hoverNavbar transition-all cursor-pointer"
+              activeclassname="text-hoverNavbar"
             >
               Experience
             </NavLink>
             <NavLink
               to="/portfolio"
-              className="hover:text-brightColor transition-all cursor-pointer"
-              activeClassName="text-brightColor"
+              className="hover:text-hoverNavbar transition-all cursor-pointer"
+              activeclassname="text-hoverNavbar"
             >
               Portfolio
             </NavLink>
@@ -89,48 +89,48 @@ const Navbar = () => {
           <NavLink
             to="/"
             exact
-            className="hover:text-brightColor transition-all cursor-pointer"
-            activeClassName="text-brightColor"
+            className="hover:text-hoverNavbar transition-all cursor-pointer"
+            activeclassname="text-hoverNavbar"
             onClick={closeMenu}
           >
             Home
           </NavLink>
           <NavLink
             to="/apropos"
-            className="hover:text-brightColor transition-all cursor-pointer"
-            activeClassName="text-brightColor"
+            className="hover:text-hoverNavbar transition-all cursor-pointer"
+            activeclassname="text-hoverNavbar"
             onClick={closeMenu}
           >
             About me
           </NavLink>
           <NavLink
             to="/services"
-            className="hover:text-brightColor transition-all cursor-pointer"
-            activeClassName="text-brightColor"
+            className="hover:text-hoverNavbar transition-all cursor-pointer"
+            activeclassname="text-hoverNavbar"
             onClick={closeMenu}
           >
             Services
           </NavLink>
           <NavLink
             to="/education"
-            className="hover:text-brightColor transition-all cursor-pointer"
-            activeClassName="text-brightColor"
+            className="hover:hoverNavbar transition-all cursor-pointer"
+            activeclassname="text-hoverNavbar"
             onClick={closeMenu}
           >
             Education
           </NavLink>
           <NavLink
             to="/experience"
-            className="hover:text-brightColor transition-all cursor-pointer"
-            activeClassName="text-brightColor"
+            className="hover:text-hoverNavbar transition-all cursor-pointer"
+            activeclassname="text-hoverNavbar"
             onClick={closeMenu}
           >
             Experience
           </NavLink>
           <NavLink
             to="/portfolio"
-            className="hover:text-brightColor transition-all cursor-pointer"
-            activeClassName="text-brightColor"
+            className="hover:text-hoverNavbar transition-all cursor-pointer"
+            activeclassname="text-hoverNavbar"
             onClick={closeMenu}
           >
             Portfolio
