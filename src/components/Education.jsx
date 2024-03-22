@@ -55,11 +55,11 @@ const Education = () => {
                         telles que des identifiants uniques" />
                 </div>
             </div>
-            <div className="mt-4">
+            {/* <div className="mt-4">
                 <RouterLink to="/" className="text-brightColor hover:underline">
                     Aller à la page d'accueil
                 </RouterLink>
-            </div>
+            </div> */}
         </div>
     );
 };

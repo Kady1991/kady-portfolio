@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Link as RouterLink, NavLink } from "react-router-dom";
 import { AiOutlineClose } from "react-icons/ai";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
-import img from "../assets/img/loGr.png";
+import Logo from "./Logo";
+
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
@@ -21,7 +22,7 @@ const Navbar = () => {
         <div className="flex flex-row justify-between p-1 md:px-32 px-5 bg-white text-boutonBase text-sm text-bold shadow-[0_3px_10px_rgb(0,0,0,0.2)] ">
           <div className="flex flex-row items-center cursor-pointer">
             <h1 className="w-20">
-              <img src={img} alt="logo" />
+              <Logo />
             </h1>
           </div>
 

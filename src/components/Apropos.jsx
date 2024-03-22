@@ -55,7 +55,7 @@ const Apropos = () => {
   return (
     <div className="min-h-screen flex flex-col lg:flex-row items-center lg:px-32 px-5 bg-white">
       <div className="flex items-center justify-center mt-50 image-animation lg:w-1/2" ref={imageRef}>
-        <img className="rounded-full" width={470} src={img} alt="" />
+        <img className="rounded-full" width={470} src={img} alt="image" />
       </div>
       <div className="flex flex-col items-center text-center lg:text-start lg:items-start w-full lg:w-1/2 space-y text-animation m-20" ref={textRef}>
         <h1 className="text-5xl font-semibold leading-tight mt-4">

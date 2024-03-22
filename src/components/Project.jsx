@@ -26,7 +26,7 @@ const Project = () => {
   const imagePaths = [M1, M2, M3, M4, M5, M6];
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-experience p-4 md:p-8 w-5/6 m-auto border-solid border-2 border-indigo-600">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-experience p-4 md:p-8 w-5/6 m-auto border-solid border-2 border-indigo-800">
       <h1 className="text-3xl font-bold mb-3 text-center text-boutonBase hover:text-brightColor mt-20">
         Mes Projets
       </h1>

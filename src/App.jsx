@@ -7,7 +7,8 @@ import Skills from './components/Skills';
 import Project from './components/Project';
 import Education from './components/Education';
 import Footer from './components/Footer';
-import 'animate.css';
+// import 'animate.css';
+
 
 const App = () => {
   return (
@@ -20,13 +21,13 @@ const App = () => {
           <Route path="/services" element={<Skills />} />
           <Route path="/education" element={<Education />} />
           <Route path="/portfolio" element={<Project />} />
+          
           {/* Ajoutez les routes pour d'autres sections si nécessaire */}
         </Routes>
-
         <div>
-          <Footer />
         </div>
       </main>
+      <Footer />
     </Router>
   );
 };
