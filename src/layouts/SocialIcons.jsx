@@ -9,7 +9,7 @@ const SocialIcons = () => {
   };
 
   return (
-    <div className="social-icons flex items-center space-x-4 justify-center">
+    <div className="social-icons flex items-center space-x-4 justify-center m-8">
       <a href="tel:+00324567890">
         <FaPhone size={46} className={iconStyle.base} />
       </a>

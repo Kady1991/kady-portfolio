@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { SiHtml5, SiJavascript, SiWordpress, SiReact, SiTailwindcss, SiBootstrap, SiGithub } from 'react-icons/si';
 import { FaPhp } from 'react-icons/fa';
 import SkillItem from "../layouts/SkillItem";
+import gsap from "gsap"; // Import de GreenSock pour les animations
+
+// Fonction d'animation des compétences
+const animateSkills = () => {
+    // Animation des compétences ici, par exemple :
+    gsap.from(".skill-item", { opacity: 0, y: 50, stagger: 0.2 });
+};
 
 const Skills = () => {
+    useEffect(() => {
+        animateSkills(); // Appel de la fonction d'animation lors du montage du composant
+    }, []);
+
     return (
-        <div className="flex flex-col items-center justify-center h-screen bg-brunClaire ">
+        <div className="flex flex-col items-center justify-center h-screen bg-brunClaire">
             <div className="text-center w-3/4">
                 <h1 className="text-3xl font-bold text-iconBrun">Skills</h1>
                 <p className="w-5/6 m-auto text-texte">
@@ -17,10 +28,9 @@ const Skills = () => {
                 </p>
             </div>
             <div className="w-5/6 m-20">
-                <div className="grid grid-cols-2 gap-3 mt-20 m-auto">
-                    <SkillItem icon={<SiHtml5 size={40} className="text-iconBrun" />} label="HTML/CSS" percentage={80} />
-                    {/* <SkillItem icon={<SiCss3 size={40} className="text-iconBrun" />} label="CSS" percentage={75} /> */}
+                <div className="grid grid-cols-2 gap-3 mt-10 m-auto">
                     <SkillItem icon={<SiJavascript size={40} className="text-iconBrun" />} label="JavaScript" percentage={50} />
+                    <SkillItem icon={<SiHtml5 size={40} className="text-iconBrun" />} label="HTML/CSS" percentage={80} />
                     <SkillItem icon={<SiWordpress size={40} className="text-iconBrun" />} label="WordPress" percentage={60} />
                     <SkillItem icon={<SiReact size={40} className="text-iconBrun" />} label="React" percentage={50} />
                     <SkillItem icon={<SiTailwindcss size={40} className="text-iconBrun" />} label="Tailwind CSS" percentage={60} />

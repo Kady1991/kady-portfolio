@@ -58,17 +58,22 @@ const Apropos = () => {
         <img className="rounded-full" width={470} src={img} alt="image" />
       </div>
       <div className="flex flex-col items-center text-center lg:text-start lg:items-start w-full lg:w-1/2 space-y text-animation m-20" ref={textRef}>
-        <h1 className="text-5xl font-semibold leading-tight mt-4">
-          <p>Nom: Sangare</p>
-          <p>Prénom: Kady</p>
-          <p>Âge: 32 ans</p>
+        <h1 className="">
+          {/* <p className="text-5xl leading-tight mt-4">Kady Sangaré</p>
+          <p className="text-5xl  leading-tight" >32 ans</p> */}
+          <p className="text-5xl text-iconBrun leading-tight mt-2">En reconversion, </p>
+          {/* <span className="text-hoverBouton"> </span>  */}
         </h1>
-        <p className="text-animation m-auto">
+        <p className="m-auto text-texte mt-8">
           Enthousiaste développeur front-end passionné par la création
-          d'expériences utilisateur exceptionnelles. Prêt à relever de nouveaux
+          d'expériences utilisateur exceptionnelles.Prêt à relever de nouveaux
+          défis et à contribuer au monde du développement web.       
+          Enthousiaste développeur front-end passionné par la création
+          d'expériences utilisateur exceptionnelles.Prêt à relever de nouveaux
           défis et à contribuer au monde du développement web.
+          
         </p>
-        <SocialIcons />
+      < SocialIcons />
       </div>
     </div>
   );

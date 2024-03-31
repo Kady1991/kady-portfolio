@@ -60,8 +60,10 @@ const Home = () => {
           Je suis Kady
           <span className="block text-hoverBouton"> Front-end Developer</span>
         </h1>
-        <p className="text-animation m-auto text-texte">
-          jopte pour la passionnante démarche de me former <br/> en développement
+        <p className="m-auto text-texte">
+          J'opte pour la passionnante démarche de me former en développement
+          frontend, nourrissant mon intérêt pour la création des expériences
+          utilisateur exceptionnelles.en développement
           frontend, nourrissant mon intérêt pour la création des expériences
           utilisateur exceptionnelles.
         </p>

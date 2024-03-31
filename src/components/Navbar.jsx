@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Link as RouterLink, NavLink } from "react-router-dom";
-import { AiOutlineClose } from "react-icons/ai";
+import { NavLink } from "react-router-dom";
+import * as MUI from "@mui/material";
 import { HiOutlineMenuAlt1 } from "react-icons/hi";
-import Logo from "./Logo";  
-
+import { AiOutlineClose } from "react-icons/ai";
+import Logo from "./Logo";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
@@ -17,127 +17,159 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed w-full z-10">
-      <div>
-        <div className="flex flex-row justify-between p-1 md:px-32 px-5 bg-white text-iconBrun text-sm text-bold shadow-[0_4px_10px_rgb(0,0,0,0.2)] ">
-          <div className="flex flex-row items-center cursor-pointer">
-            <h1 className="w-20">
-              <Logo />
-            </h1>
-          </div>
+    <MUI.Box sx={{ width:'full', display:'flex',}}>
+      <MUI.Box
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          p: 1,
+          md: { px: 32 },
+          px: 5,
+          bg: "white",
+          color: "text-iconBrun",
+          fontSize: "sm",
+          fontWeight: "bold",
+          boxShadow: "0 4px 10px rgba(0,0,0,0.2)",
+        }}
+      >
+        <MUI.Box
+          sx={{ display: "flex", alignItems: "center", cursor: "pointer" }}
+        >
+          <h1 className="w-40">
+            <Logo />
+          </h1>
+        </MUI.Box>
 
-          <nav className="hidden lg:flex flex-row items-center text-lg font-medium gap-8">
+        <MUI.Box sx={{ display: "flex", alignItems: "center", gap: 8, justifyContent:'space-between', width:'full' }}>
+          <nav
+            sx={{
+              display: ["none", "flex"],
+              flexDirection: "row",
+              alignItems: "center",
+              fontSize: "lg",
+              fontWeight: "medium",
+            }}
+          >
             <NavLink
               to="/"
-              exact
+              exact={true.toString()}
               className="hover:text-hoverNavbar transition-all cursor-pointer"
-              activeclassname="text-hoverNavbar"
+              activeClassName="text-hoverNavbar"
+              onClick={closeMenu}
             >
               Home
             </NavLink>
             <NavLink
               to="/apropos"
               className="hover:text-hoverNavbar transition-all cursor-pointer"
-              activeclassname="text-hoverNavbar"
+              activeClassName="text-hoverNavbar"
+              onClick={closeMenu}
             >
               About me
             </NavLink>
             <NavLink
               to="/services"
               className="hover:text-hoverNavbar transition-all cursor-pointer"
-              activeclassname="text-hoverNavbar"
+              activeClassName="text-hoverNavbar"
+              onClick={closeMenu}
             >
               Services
             </NavLink>
             <NavLink
               to="/education"
               className="hover:text-hoverNavbar transition-all cursor-pointer"
-              activeclassname="text-hoverNavbar"
+              activeClassName="text-hoverNavbar"
+              onClick={closeMenu}
             >
               Education
             </NavLink>
             <NavLink
-              to="/experience"
-              className="hover:text-hoverNavbar transition-all cursor-pointer"
-              activeclassname="text-hoverNavbar"
-            >
-              Experience
-            </NavLink>
-            <NavLink
               to="/portfolio"
               className="hover:text-hoverNavbar transition-all cursor-pointer"
-              activeclassname="text-hoverNavbar"
+              activeClassName="text-hoverNavbar"
+              onClick={closeMenu}
             >
               Portfolio
             </NavLink>
+            {/* Ajoutez les autres liens ici */}
           </nav>
 
-          <div className="lg:hidden flex items-center">
+          <MUI.Box sx={{ display: ["flex", "none"], alignItems: "center" }}>
             {menu ? (
               <AiOutlineClose size={28} onClick={handleChange} />
             ) : (
               <HiOutlineMenuAlt1 size={28} onClick={handleChange} />
             )}
-          </div>
-        </div>
+          </MUI.Box>
+        </MUI.Box>
+      </MUI.Box>
 
-        <div
-          className={`${
-            menu ? "translate-x-0" : "-translate-x-full"
-          } lg:hidden flex flex-col absolute bg-black text-white left-0 top-20 font-semibold text-2xl text-center z-10 pt-8 pb-4 gap-8 w-full h-fit transition-transform duration-300`}
+      {/* Mobile Menu */}
+      <MUI.Box
+        sx={{
+          transform: menu ? "translateX(0)" : "translateX(-100%)",
+          transition: "transform 0.3s",
+          display: ["block", "none"],
+          position: "absolute",
+          bg: "black",
+          color: "white",
+          left: 0,
+          top: "20px",
+          fontWeight: "semibold",
+          fontSize: "2xl",
+          textAlign: "center",
+          zIndex: 10,
+          pt: 8,
+          pb: 4,
+          gap: 8,
+          w: "full",
+          h: "fit-content",
+        }}
+      >
+        <NavLink
+          to="/"
+          exact
+          className="hover:text-hoverNavbar transition-all cursor-pointer"
+          activeClassName="text-hoverNavbar"
+          onClick={closeMenu}
         >
-          <NavLink
-            to="/"
-            exact
-            className="hover:text-hoverNavbar transition-all cursor-pointer"
-            activeclassname="text-hoverNavbar"
-            onClick={closeMenu}
-          >
-            Home
-          </NavLink>
-          <NavLink
-            to="/apropos"
-            className="hover:text-hoverNavbar transition-all cursor-pointer"
-            activeclassname="text-hoverNavbar"
-            onClick={closeMenu}
-          >
-            About me
-          </NavLink>
-          <NavLink
-            to="/services"
-            className="hover:text-hoverNavbar transition-all cursor-pointer"
-            activeclassname="text-hoverNavbar"
-            onClick={closeMenu}
-          >
-            Services
-          </NavLink>
-          <NavLink
-            to="/education"
-            className="hover:hoverNavbar transition-all cursor-pointer"
-            activeclassname="text-hoverNavbar"
-            onClick={closeMenu}
-          >
-            Education
-          </NavLink>
-          <NavLink
-            to="/experience"
-            className="hover:text-hoverNavbar transition-all cursor-pointer"
-            activeclassname="text-hoverNavbar"
-            onClick={closeMenu}
-          >
-            Experience
-          </NavLink>
-          <NavLink
-            to="/portfolio"
-            className="hover:text-hoverNavbar transition-all cursor-pointer"
-            activeclassname="text-hoverNavbar"
-            onClick={closeMenu}
-          >
-            Portfolio
-          </NavLink>
-        </div>
-      </div>
-    </div>
+          Home
+        </NavLink>
+        <NavLink
+          to="/apropos"
+          className="hover:text-hoverNavbar transition-all cursor-pointer"
+          activeClassName="text-hoverNavbar"
+          onClick={closeMenu}
+        >
+          About me
+        </NavLink>
+        <NavLink
+          to="/services"
+          className="hover:text-hoverNavbar transition-all cursor-pointer"
+          activeClassName="text-hoverNavbar"
+          onClick={closeMenu}
+        >
+          Services
+        </NavLink>
+        <NavLink
+          to="/education"
+          className="hover:text-hoverNavbar transition-all cursor-pointer"
+          activeClassName="text-hoverNavbar"
+          onClick={closeMenu}
+        >
+          Education
+        </NavLink>
+        <NavLink
+          to="/portfolio"
+          className="hover:text-hoverNavbar transition-all cursor-pointer"
+          activeClassName="text-hoverNavbar"
+          onClick={closeMenu}
+        >
+          Portfolio
+        </NavLink>
+          
+      </MUI.Box>
+    </MUI.Box>
   );
 };
 
