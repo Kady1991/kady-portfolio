@@ -17,14 +17,12 @@ const Navbar = () => {
   };
 
   return (
-    <MUI.Box sx={{ width:'full', display:'flex',}}>
+    <MUI.Box sx={{ width: '100%', display: 'flex' , justifyContent:"center"}}>
       <MUI.Box
         sx={{
+          width: '100%',
           display: "flex",
           justifyContent: "space-between",
-          p: 1,
-          md: { px: 32 },
-          px: 5,
           bg: "white",
           color: "text-iconBrun",
           fontSize: "sm",
@@ -33,22 +31,24 @@ const Navbar = () => {
         }}
       >
         <MUI.Box
-          sx={{ display: "flex", alignItems: "center", cursor: "pointer" }}
+          sx={{ display: "flex", alignItems: "center", cursor: "pointer", ml: 5 }}
         >
           <h1 className="w-40">
             <Logo />
           </h1>
         </MUI.Box>
 
-        <MUI.Box sx={{ display: "flex", alignItems: "center", gap: 8, justifyContent:'space-between', width:'full' }}>
+        <MUI.Box sx={{ display: "flex", alignItems: "center", gap: 8, justifyContent: 'flex-end', flex: 1 }}>
           <nav
             sx={{
-              display: ["none", "flex"],
+              display: "flex",
               flexDirection: "row",
               alignItems: "center",
               fontSize: "lg",
               fontWeight: "medium",
+              pr: 5,
             }}
+            className="menu"
           >
             <NavLink
               to="/"
@@ -94,7 +94,7 @@ const Navbar = () => {
             {/* Ajoutez les autres liens ici */}
           </nav>
 
-          <MUI.Box sx={{ display: ["flex", "none"], alignItems: "center" }}>
+          <MUI.Box sx={{ display: ["flex", "none"], alignItems: "center", mr: 5 }}>
             {menu ? (
               <AiOutlineClose size={28} onClick={handleChange} />
             ) : (
@@ -114,7 +114,7 @@ const Navbar = () => {
           bg: "black",
           color: "white",
           left: 0,
-          top: "20px",
+          top: "64px",
           fontWeight: "semibold",
           fontSize: "2xl",
           textAlign: "center",
@@ -122,13 +122,12 @@ const Navbar = () => {
           pt: 8,
           pb: 4,
           gap: 8,
-          w: "full",
-          h: "fit-content",
+          w: "100%",
         }}
       >
         <NavLink
           to="/"
-          exact
+          exact={true.toString()} // ou exact="true"
           className="hover:text-hoverNavbar transition-all cursor-pointer"
           activeClassName="text-hoverNavbar"
           onClick={closeMenu}

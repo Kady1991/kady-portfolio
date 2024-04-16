@@ -9,3 +9,8 @@ body{
   font-size: 1.3rem;
 }
 
+.menu > * {
+  margin-right: 3rem;
+  
+  color: "iconBrun";
+}
