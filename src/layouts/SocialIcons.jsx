@@ -1,32 +1,31 @@
 import React from 'react';
-import { FaLinkedin, FaGithub, FaPhone, FaEnvelope } from 'react-icons/fa'; // Importez les icônes pour le téléphone et l'e-mail
-import { SiReact } from 'react-icons/si';
-import { Link as RouterLink } from 'react-router-dom';
+import { IconButton } from '@mui/material';
+import { Phone, Mail, LinkedIn, GitHub, GetApp } from '@mui/icons-material';
 
 const SocialIcons = () => {
-  const iconStyle = {
-    base: 'text-iconBrun hover:text-hoverBouton p-2 transition-all cursor-pointer',
+  const handleDownload = () => {
+    // Logique de téléchargement du CV
   };
 
   return (
     <div className="social-icons flex items-center space-x-4 justify-center m-8">
-      <a href="tel:+00324567890">
-        <FaPhone size={46} className={iconStyle.base} />
-      </a>
-      <a href="mailto:sangarekady663@yahoo.fr">
-        <FaEnvelope size={46} className={iconStyle.base} />
-      </a>
-      <a href="https://www.linkedin.com/in/kady-sangare/" target="_blank" rel="noopener noreferrer">
-        <FaLinkedin size={46} className={iconStyle.base} />
-      </a>
-      <a href="https://github.com/Kady1991?tab=repositories" target="_blank" rel="noopener noreferrer">
-        <FaGithub size={46} className={iconStyle.base} />
-      </a>
-      <RouterLink to="/portfolio">
-        <SiReact size={46} className={iconStyle.base} />
-      </RouterLink>
+      <IconButton className="floting-icon" onClick={() => {}}>
+        <Phone fontSize="large" /> {/* Ajustez la taille ici */}
+      </IconButton>
+      <IconButton className="floting-icon" onClick={() => {}}>
+        <Mail fontSize="large" /> {/* Ajustez la taille ici */}
+      </IconButton>
+      <IconButton className="floting-icon" onClick={() => {}} href="https://www.linkedin.com/in/kady-sangare/" target="_blank" rel="noopener noreferrer">
+        <LinkedIn fontSize="large" /> {/* Ajustez la taille ici */}
+      </IconButton>
+      <IconButton className="floting-icon" onClick={() => {}} href="https://github.com/Kady1991?tab=repositories" target="_blank" rel="noopener noreferrer">
+        <GitHub fontSize="large" /> {/* Ajustez la taille ici */}
+      </IconButton>
+      <IconButton className="floting-icon" onClick={handleDownload}>
+        <GetApp fontSize="large" /> {/* Ajustez la taille ici */}
+      </IconButton>
     </div>
   );
 };
 
-export default SocialIcons;
+export default SocialIcons; // Assurez-vous que cette ligne est présente

@@ -1,82 +1,38 @@
-import React, { useEffect, useRef } from "react";
-import img from "../assets/img/moi.png";
-import SocialIcons from "../layouts/SocialIcons";
-import { gsap, Power3 } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Link as RouterLink } from "react-router-dom";
-
-gsap.registerPlugin(ScrollTrigger);
+import React, { useState } from 'react';
+import { Timeline, Button } from 'antd';
+import { SocialIcons } from '../layouts/SocialIcons'; // Assurez-vous d'importer correctement vos icônes sociales
 
 const Apropos = () => {
-  const imageRef = useRef(null);
-  const textRef = useRef(null);
+  const [currentStep, setCurrentStep] = useState(0);
 
-  useEffect(() => {
-    const imageElement = imageRef.current;
-    const textElement = textRef.current;
-
-    gsap.set([textElement, imageElement], { opacity: 0 });
-
-    gsap.fromTo(
-      imageElement,
-      { y: -200, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 2,
-        ease: Power3.easeOut,
-        scrollTrigger: {
-          trigger: imageElement,
-          start: "top 80%",
-          end: "bottom 30%",
-          toggleActions: "play none none reverse",
-        },
-      }
-    );
-
-    gsap.fromTo(
-      textElement,
-      { x: -200, opacity: 0 },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 3,
-        ease: Power3.easeOut,
-        scrollTrigger: {
-          trigger: textElement,
-          start: "top 80%",
-          end: "bottom 30%",
-          toggleActions: "play none none reverse",
-        },
-      }
-    );
-  }, []);
+  const timelineSteps = [
+    { year: '2012 - 2014', text: 'Texte 1' },
+    { year: '2015', text: 'Texte 2' },
+    { year: '2017 - 2019', text: 'Texte 3' },
+    { year: '2020 - 2021', text: 'Texte 4' },
+    { year: '2023 - 2024', text: 'Texte 5' }
+  ];
 
   return (
     <div className="min-h-screen flex flex-col lg:flex-row items-center lg:px-32 px-5 bg-white">
       <div className="flex items-center justify-center mt-50 image-animation lg:w-1/2" ref={imageRef}>
-        <img className="rounded-full" width={470} src={img} alt="image" />
+      <div className="flex items-center justify-center mt-50 image-animation">
+        <img className="rounded-full" width={470} src={img} alt="" />
+      </div>
       </div>
       <div className="flex flex-col items-center text-center lg:text-start lg:items-start w-full lg:w-1/2 space-y text-animation m-20" ref={textRef}>
-        <h1 className="">
-          {/* <p className="text-5xl leading-tight mt-4">Kady Sangaré</p>
-          <p className="text-5xl  leading-tight" >32 ans</p> */}
-          <p className="text-5xl text-iconBrun leading-tight mt-2">En reconversion, </p>
-          {/* <span className="text-hoverBouton"> </span>  */}
-        </h1>
-        <p className="m-auto text-texte mt-8">
-          Enthousiaste développeur front-end passionné par la création
-          d'expériences utilisateur exceptionnelles.Prêt à relever de nouveaux
-          défis et à contribuer au monde du développement web.       
-          Enthousiaste développeur front-end passionné par la création
-          d'expériences utilisateur exceptionnelles.Prêt à relever de nouveaux
-          défis et à contribuer au monde du développement web.
-          
-        </p>
-      < SocialIcons />
+        <Timeline mode="alternate" current={currentStep}>
+          {timelineSteps.map((step, index) => (
+            <Timeline.Item key={index} label={step.year}>
+              {step.text}
+            </Timeline.Item>
+          ))}
+        </Timeline>
+        <Button onClick={() => setCurrentStep(currentStep + 1)}>Avancer</Button>
       </div>
     </div>
   );
 };
 
+<SocialIcons />
 export default Apropos;

@@ -1,16 +1,30 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body{
-  font-family: 'Cormorant+Garamond';
+body {
+  font-family: 'Cormorant Garamond';
   font-size: 1.3rem;
 }
 
 .menu > * {
   margin-right: 3rem;
-  
-  color: "iconBrun";
+  color: "iconBrun"; /* Utilisation de la classe sans guillemets */
+}
+
+
+.floting-icon {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
