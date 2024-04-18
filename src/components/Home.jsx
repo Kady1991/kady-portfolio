@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import img from "../assets/img/moi.png";
-import SocialIcons from "../layouts/SocialIcons";
 import { gsap, Power3 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -54,8 +53,8 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col justify-center lg:flex-row items-center lg:px-32 px-5 bg-brunClaire">
-      <div className="flex flex-col items-center text-center lg:text-start lg:items-start w-full lg:w-1/2 space-y text-animation m-20">
+    <div className="min-h-screen flex flex-col justify-center lg:flex-row items-center lg:px-32 px-5 bg-brunClaire m-auto ">
+      <div className="flex flex-col items-center text-center lg:text-start lg:items-start w-full lg:w-2/6 space-y text-animation m-20  m-auto">
         <h1 className="text-5xl font-semibold text-iconBrun leading-tight mt-24">
           Je suis Kady
           <span className="block text-hoverBouton"> Front-end Developer</span>
@@ -67,7 +66,7 @@ const Home = () => {
           frontend, nourrissant mon intérêt pour la création des expériences
           utilisateur exceptionnelles.
         </p>
-        <SocialIcons />
+      
       </div>
 
       <div className="flex items-center justify-center mt-50 image-animation">

@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import * as MUI from "@mui/material";
-import { HiOutlineMenuAlt1 } from "react-icons/hi";
-import { AiOutlineClose } from "react-icons/ai";
+import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
+import { Layout, Menu } from "antd";
+import "../index.css"; // Importez le fichier CSS correctement
 import Logo from "./Logo";
+import SocialIcons from "../layouts/SocialIcons";
+
+const { Header } = Layout;
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
 
   const handleChange = () => {
-    setMenu(!menu);
+    setMenu(prevMenu => !prevMenu);
   };
 
   const closeMenu = () => {
@@ -17,158 +20,50 @@ const Navbar = () => {
   };
 
   return (
-    <MUI.Box sx={{ width: '100%', display: 'flex' , justifyContent:"center"}}>
-      <MUI.Box
-        sx={{
-          width: '100%',
-          display: "flex",
-          justifyContent: "space-between",
-          bg: "white",
-          color: "text-iconBrun",
-          fontSize: "sm",
-          fontWeight: "bold",
-          boxShadow: "0 4px 10px rgba(0,0,0,0.2)",
-        }}
-      >
-        <MUI.Box
-          sx={{ display: "flex", alignItems: "center", cursor: "pointer", ml: 5 }}
-        >
-          <h1 className="w-40">
-            <Logo />
-          </h1>
-        </MUI.Box>
+    <Header style={{ position: "fixed", zIndex: 1, width: "350px", height: "100vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-around",color: "#fff", textAlign:"center" }}>
+      <div style={{ marginBottom: "10px", textAlign:"center" }}>
+        <Logo />
+      </div>
 
-        <MUI.Box sx={{ display: "flex", alignItems: "center", gap: 8, justifyContent: 'flex-end', flex: 1 }}>
-          <nav
-            sx={{
-              display: "flex",
-              flexDirection: "row",
-              alignItems: "center",
-              fontSize: "lg",
-              fontWeight: "medium",
-              pr: 5,
-            }}
-            className="menu"
-          >
-            <NavLink
-              to="/"
-              exact={true.toString()}
-              className="hover:text-hoverNavbar transition-all cursor-pointer"
-              activeClassName="text-hoverNavbar"
-              onClick={closeMenu}
-            >
-              Home
-            </NavLink>
-            <NavLink
-              to="/apropos"
-              className="hover:text-hoverNavbar transition-all cursor-pointer"
-              activeClassName="text-hoverNavbar"
-              onClick={closeMenu}
-            >
-              About me
-            </NavLink>
-            <NavLink
-              to="/services"
-              className="hover:text-hoverNavbar transition-all cursor-pointer"
-              activeClassName="text-hoverNavbar"
-              onClick={closeMenu}
-            >
-              Services
-            </NavLink>
-            <NavLink
-              to="/education"
-              className="hover:text-hoverNavbar transition-all cursor-pointer"
-              activeClassName="text-hoverNavbar"
-              onClick={closeMenu}
-            >
-              Education
-            </NavLink>
-            <NavLink
-              to="/portfolio"
-              className="hover:text-hoverNavbar transition-all cursor-pointer"
-              activeClassName="text-hoverNavbar"
-              onClick={closeMenu}
-            >
-              Portfolio
-            </NavLink>
-            {/* Ajoutez les autres liens ici */}
-          </nav>
+      <Menu theme="dark" mode="vertical" defaultSelectedKeys={["1"]} style={{ width: "100%" , height:"50vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "space-around" }}>
+        <Menu.Item key="1" style={{ fontSize: "25px" }}>
+          <NavLink to="/" onClick={closeMenu} style={{ color: "#fff", textAlign: "center" }}>
+            Home
+          </NavLink>
+        </Menu.Item>
+        <Menu.Item key="2" style={{ fontSize:"25px" }}>
+          <NavLink to="/apropos" onClick={closeMenu} style={{ color: "#fff", textAlign: "center" }}>
+            About me
+          </NavLink>
+        </Menu.Item>
+        <Menu.Item key="3" style={{ fontSize: "25px"}}>
+          <NavLink to="/services" onClick={closeMenu} style={{ color: "#fff", textAlign: "center" }}>
+            Services
+          </NavLink>
+        </Menu.Item>
+        <Menu.Item key="4" style={{ fontSize: "25px" }}>
+          <NavLink to="/education" onClick={closeMenu} style={{ color: "#fff", textAlign: "center" }}>
+            Education
+          </NavLink>
+        </Menu.Item>
+        <Menu.Item key="5" style={{ fontSize: "25px",}}>
+          <NavLink to="/portfolio" onClick={closeMenu} style={{ color: "#fff", textAlign: "center" }}>
+            Portfolio
+          </NavLink>
+        </Menu.Item>
+      </Menu>
 
-          <MUI.Box sx={{ display: ["flex", "none"], alignItems: "center", mr: 5 }}>
-            {menu ? (
-              <AiOutlineClose size={28} onClick={handleChange} />
-            ) : (
-              <HiOutlineMenuAlt1 size={28} onClick={handleChange} />
-            )}
-          </MUI.Box>
-        </MUI.Box>
-      </MUI.Box>
-
-      {/* Mobile Menu */}
-      <MUI.Box
-        sx={{
-          transform: menu ? "translateX(0)" : "translateX(-100%)",
-          transition: "transform 0.3s",
-          display: ["block", "none"],
-          position: "absolute",
-          bg: "black",
-          color: "white",
-          left: 0,
-          top: "64px",
-          fontWeight: "semibold",
-          fontSize: "2xl",
-          textAlign: "center",
-          zIndex: 10,
-          pt: 8,
-          pb: 4,
-          gap: 8,
-          w: "100%",
-        }}
-      >
-        <NavLink
-          to="/"
-          exact={true.toString()} // ou exact="true"
-          className="hover:text-hoverNavbar transition-all cursor-pointer"
-          activeClassName="text-hoverNavbar"
-          onClick={closeMenu}
-        >
-          Home
-        </NavLink>
-        <NavLink
-          to="/apropos"
-          className="hover:text-hoverNavbar transition-all cursor-pointer"
-          activeClassName="text-hoverNavbar"
-          onClick={closeMenu}
-        >
-          About me
-        </NavLink>
-        <NavLink
-          to="/services"
-          className="hover:text-hoverNavbar transition-all cursor-pointer"
-          activeClassName="text-hoverNavbar"
-          onClick={closeMenu}
-        >
-          Services
-        </NavLink>
-        <NavLink
-          to="/education"
-          className="hover:text-hoverNavbar transition-all cursor-pointer"
-          activeClassName="text-hoverNavbar"
-          onClick={closeMenu}
-        >
-          Education
-        </NavLink>
-        <NavLink
-          to="/portfolio"
-          className="hover:text-hoverNavbar transition-all cursor-pointer"
-          activeClassName="text-hoverNavbar"
-          onClick={closeMenu}
-        >
-          Portfolio
-        </NavLink>
-          
-      </MUI.Box>
-    </MUI.Box>
+      <div className="icons">
+        <SocialIcons/>
+      </div>
+      {/* <div className="menu-toggle" style={{ paddingBottom: "15px" }}>
+        {menu ? (
+          <CloseOutlined style={{ fontSize: "20px", color: "#fff" }} onClick={handleChange} />
+        ) : (
+          <MenuOutlined style={{ fontSize: "20px", color: "#fff" }} onClick={handleChange} />
+        )}
+      </div> */}
+    </Header>
   );
 };
 

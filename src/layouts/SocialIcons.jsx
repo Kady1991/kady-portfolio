@@ -1,6 +1,6 @@
 import React from 'react';
-import { IconButton } from '@mui/material';
-import { Phone, Mail, LinkedIn, GitHub, GetApp } from '@mui/icons-material';
+import { Button } from 'antd';
+import { PhoneOutlined, MailOutlined, LinkedinOutlined, GithubOutlined, DownloadOutlined } from '@ant-design/icons';
 
 const SocialIcons = () => {
   const handleDownload = () => {
@@ -9,23 +9,13 @@ const SocialIcons = () => {
 
   return (
     <div className="social-icons flex items-center space-x-4 justify-center m-8">
-      <IconButton className="floting-icon" onClick={() => {}}>
-        <Phone fontSize="large" /> {/* Ajustez la taille ici */}
-      </IconButton>
-      <IconButton className="floting-icon" onClick={() => {}}>
-        <Mail fontSize="large" /> {/* Ajustez la taille ici */}
-      </IconButton>
-      <IconButton className="floting-icon" onClick={() => {}} href="https://www.linkedin.com/in/kady-sangare/" target="_blank" rel="noopener noreferrer">
-        <LinkedIn fontSize="large" /> {/* Ajustez la taille ici */}
-      </IconButton>
-      <IconButton className="floting-icon" onClick={() => {}} href="https://github.com/Kady1991?tab=repositories" target="_blank" rel="noopener noreferrer">
-        <GitHub fontSize="large" /> {/* Ajustez la taille ici */}
-      </IconButton>
-      <IconButton className="floting-icon" onClick={handleDownload}>
-        <GetApp fontSize="large" /> {/* Ajustez la taille ici */}
-      </IconButton>
+      <Button className="floting-icon" onClick={() => {}} icon={<PhoneOutlined />} size="large" /> {/* Ajustez la taille ici */}
+      <Button className="floting-icon" onClick={() => {}} icon={<MailOutlined />} size="large" style={{ background: 'white' }} /> {/* Ajustez la taille ici */}
+      <Button className="floting-icon" onClick={() => {}} href="https://www.linkedin.com/in/kady-sangare/" target="_blank" rel="noopener noreferrer" icon={<LinkedinOutlined />}  size="large" style={{ background: 'white' }} /> {/* Ajustez la taille ici */}
+      <Button className="floting-icon" onClick={() => {}} href="https://github.com/Kady1991?tab=repositories" target="_blank" rel="noopener noreferrer" icon={<GithubOutlined />}  size="large" style={{ background: 'white' }} /> {/* Ajustez la taille ici */}
+      <Button className="floting-icon" onClick={handleDownload} icon={<DownloadOutlined />} size="large" style={{ background: 'white' }} /> {/* Ajustez la taille ici */}
     </div>
   );
 };
 
-export default SocialIcons; // Assurez-vous que cette ligne est présente
+export default SocialIcons;

@@ -1,15 +1,13 @@
-// Logo.js
+// Logo.jsx
+import React from "react";
+import logoImage from "../assets/img/loGr.png"; // Importez l'image que vous souhaitez utiliser
 
-import { Link } from 'react-router-dom'; // Importez Link depuis react-router-dom
-import img from '../assets/img/loGr.png';
-
-const Logo = () => {
+const LogoComponent = () => {
   return (
-    <Link to="/" className="flex items-center">
-      <img className="rounded-full" width={100} src={img} alt="mon logo" />
-    </Link>
+    <div>
+      <img src={logoImage} alt="Logo" style={{ width: "100px" }} /> {/* Ajustez la taille du logo ici */}
+    </div>
   );
 };
 
-export default Logo;
-
+export default LogoComponent;

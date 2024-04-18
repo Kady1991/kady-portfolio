@@ -17,9 +17,9 @@ const Skills = () => {
 
     return (
         <div className="flex flex-col items-center justify-center h-screen bg-brunClaire">
-            <div className="text-center w-3/4">
+            <div className="text-center w-5/6">
                 <h1 className="text-3xl font-bold text-iconBrun">Skills</h1>
-                <p className="w-5/6 m-auto text-texte">
+                <p className="w-3/6 m-auto text-texte">
                     Le composant Skills est une représentation visuelle de mes compétences en développement web. Chaque compétence,
                     telles que HTML/CSS, JavaScript, WordPress, React, Tailwind CSS, Bootstrap et GitHub, est illustrée par une
                     icône reconnaissable. Les barres de progression colorées indiquent le niveau de maîtrise de chaque compétence,
@@ -27,16 +27,16 @@ const Skills = () => {
                     aperçu clair de mon profil professionnel et de mes capacités dans le domaine du développement web.
                 </p>
             </div>
-            <div className="w-5/6 m-20">
+            <div className="w-3/4  m-auto">
                 <div className="grid grid-cols-2 gap-3 mt-10 m-auto">
-                    <SkillItem icon={<SiJavascript size={40} className="text-iconBrun" />} label="JavaScript" percentage={50} />
-                    <SkillItem icon={<SiHtml5 size={40} className="text-iconBrun" />} label="HTML/CSS" percentage={80} />
-                    <SkillItem icon={<SiWordpress size={40} className="text-iconBrun" />} label="WordPress" percentage={60} />
-                    <SkillItem icon={<SiReact size={40} className="text-iconBrun" />} label="React" percentage={50} />
-                    <SkillItem icon={<SiTailwindcss size={40} className="text-iconBrun" />} label="Tailwind CSS" percentage={60} />
-                    <SkillItem icon={<SiBootstrap size={40} className="text-iconBrun" />} label="Bootstrap" percentage={60} />
-                    <SkillItem icon={<FaPhp size={40} className="text-iconBrun" />} label="PHP" percentage={50} />
-                    <SkillItem icon={<SiGithub size={40} className="text-iconBrun" />} label="GitHub" percentage={65} />
+                    <SkillItem icon={<SiJavascript size={30} className="text-iconBrun" />} label="JavaScript" percentage={50} />
+                    <SkillItem icon={<SiHtml5 size={30} className="text-iconBrun" />} label="HTML/CSS" percentage={80} />
+                    <SkillItem icon={<SiWordpress size={30} className="text-iconBrun" />} label="WordPress" percentage={60} />
+                    <SkillItem icon={<SiReact size={30} className="text-iconBrun" />} label="React" percentage={50} />
+                    <SkillItem icon={<SiTailwindcss size={30} className="text-iconBrun" />} label="Tailwind CSS" percentage={60} />
+                    <SkillItem icon={<SiBootstrap size={30} className="text-iconBrun" />} label="Bootstrap" percentage={60} />
+                    <SkillItem icon={<FaPhp size={30} className="text-iconBrun" />} label="PHP" percentage={50} />
+                    <SkillItem icon={<SiGithub size={30} className="text-iconBrun" />} label="GitHub" percentage={65} />
                 </div>
             </div>
         </div>
