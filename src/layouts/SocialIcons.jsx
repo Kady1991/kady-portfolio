@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button } from 'antd';
-import { PhoneOutlined, MailOutlined, LinkedinOutlined, GithubOutlined, DownloadOutlined } from '@ant-design/icons';
+import {DownloadOutlined, GithubOutlined, LinkedinOutlined, MailOutlined } from '@ant-design/icons';
+import { FloatButton } from 'antd';
 
 const SocialIcons = () => {
   const handleDownload = () => {
@@ -8,13 +8,16 @@ const SocialIcons = () => {
   };
 
   return (
-    <div className="social-icons flex items-center space-x-4 justify-center m-8">
-      <Button className="floting-icon" onClick={() => {}} icon={<PhoneOutlined />} size="large" /> {/* Ajustez la taille ici */}
-      <Button className="floting-icon" onClick={() => {}} icon={<MailOutlined />} size="large" style={{ background: 'white' }} /> {/* Ajustez la taille ici */}
-      <Button className="floting-icon" onClick={() => {}} href="https://www.linkedin.com/in/kady-sangare/" target="_blank" rel="noopener noreferrer" icon={<LinkedinOutlined />}  size="large" style={{ background: 'white' }} /> {/* Ajustez la taille ici */}
-      <Button className="floting-icon" onClick={() => {}} href="https://github.com/Kady1991?tab=repositories" target="_blank" rel="noopener noreferrer" icon={<GithubOutlined />}  size="large" style={{ background: 'white' }} /> {/* Ajustez la taille ici */}
-      <Button className="floting-icon" onClick={handleDownload} icon={<DownloadOutlined />} size="large" style={{ background: 'white' }} /> {/* Ajustez la taille ici */}
-    </div>
+    <>
+      <div style={{ width: "60px", height: "20px", position: "fixed", bottom: "24px", left: "24px" }}>
+        <FloatButton.Group shape="cirque">
+          <FloatButton icon={<DownloadOutlined />} onClick={handleDownload} size="large" />
+          <FloatButton icon={<GithubOutlined />} href="https://github.com/Kady1991?tab=repositories" target="_blank" rel="noopener noreferrer" size="large" />
+          <FloatButton icon={<LinkedinOutlined />} href="https://www.linkedin.com/in/kady-sangare/" target="_blank" rel="noopener noreferrer" size="large" />
+          <FloatButton icon={<MailOutlined />} size="large" />
+        </FloatButton.Group>
+      </div>
+    </>
   );
 };
 
