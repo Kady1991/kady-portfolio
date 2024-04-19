@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { Menu, Layout } from "antd";
 import { CloseOutlined, MenuOutlined } from "@ant-design/icons";
 import Logo from "./Logo";
-import SocialIcons from "../layouts/SocialIcons";
+import SocialIcons from "../layouts/FloatingIcons";
 
 const { Header } = Layout;
 
@@ -38,12 +38,15 @@ const Navbar = ({ menu, closeMenu, handleChange }) => {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          justifyContent:"space-between",
+          justifyContent: "space-between",
           background: "#170D06",
         }}
       >
-        <Menu.Item key="1" style={{ fontSize: "25px" }}
-        className="custom-menu-item" >
+        <Menu.Item
+          key="1"
+          style={{ fontSize: "25px" }}
+          className="custom-menu-item"
+        >
           <NavLink
             exact
             to="/"
@@ -54,8 +57,11 @@ const Navbar = ({ menu, closeMenu, handleChange }) => {
             Home
           </NavLink>
         </Menu.Item>
-        <Menu.Item key="2" style={{ fontSize: "25px" }}
-        className="custom-menu-item" >
+        <Menu.Item
+          key="2"
+          style={{ fontSize: "25px" }}
+          className="custom-menu-item"
+        >
           <NavLink
             to="/apropos"
             style={{ color: "#fff", textDecoration: "none", fontSize: "25px" }}
@@ -113,7 +119,7 @@ const Navbar = ({ menu, closeMenu, handleChange }) => {
         {/* SocialIcons component */}
         <SocialIcons />
       </div>
-      <div className="menu-toggle" style={{ paddingBottom: "15px" }}>
+      {/* <div className="menu-toggle" style={{ paddingBottom: "15px" }}>
         {menu ? (
           <CloseOutlined
             style={{ fontSize: "20px", color: "#fff" }}
@@ -125,7 +131,7 @@ const Navbar = ({ menu, closeMenu, handleChange }) => {
             onClick={handleChange}
           />
         )}
-      </div>
+      </div> */}
     </Header>
   );
 };

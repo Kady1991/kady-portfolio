@@ -7,7 +7,7 @@ import Apropos from './components/Apropos';
 import Skills from './components/Skills';
 import Project from './components/Project';
 import Education from './components/Education';
-import Footer from './components/Footer';
+
 
 
 const App = () => {
@@ -23,7 +23,7 @@ const App = () => {
           <Route path="/portfolio" element={<Project />} />
         </Routes>
       </main>
-      <Footer />
+    
     </Router>
   );
 };

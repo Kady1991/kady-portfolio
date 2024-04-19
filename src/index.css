@@ -11,15 +11,18 @@ body {
   font-size: 1.3rem;
 }
 
-/* .menu > * {
-  margin-right: 3rem;
-  color: "iconBrun"; 
-} */
-
-
-.floting-icon {
-  animation: float 3s ease-in-out infinite;
+.icon-link {
+  margin-right: 10px;
+  color: #9f7a56; /* Couleur par défaut des icônes */
+  transition: color 0.3s ease; /* Transition de couleur au survol */
+  font-size: 1.8rem;
+  margin: 1rem;
 }
+
+.icon-link:hover {
+  color: #e8d6c4; /* Couleur au survol */
+}
+
 
 @keyframes float {
   0%, 100% {

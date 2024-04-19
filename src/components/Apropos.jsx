@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Timeline, Button } from "antd";
-import SocialIcons from "../layouts/SocialIcons";
+import SocialIcons from "../layouts/FloatingIcons";
 import img from "../assets/img/moi.png";
 
 const Apropos = () => {
@@ -11,7 +11,7 @@ const Apropos = () => {
     { year: "2015", text: "Texte 2" },
     { year: "2017 - 2019", text: "Texte 3" },
     { year: "2020 - 2021", text: "Texte 4" },
-    { year: "2023 - 2024", text: "Texte 5" }
+    { year: "2023 - 2024", text: "Texte 5" },
   ];
 
   return (
@@ -27,9 +27,8 @@ const Apropos = () => {
         <p className="m-auto text-texte">
           J'opte pour la passionnante démarche de me former en développement
           frontend, nourrissant mon intérêt pour la création des expériences
-          utilisateur exceptionnelles.en développement
-          frontend, nourrissant mon intérêt pour la création des expériences
-          utilisateur exceptionnelles.
+          utilisateur exceptionnelles.en développement frontend, nourrissant mon
+          intérêt pour la création des expériences utilisateur exceptionnelles.
         </p>
       </div>
     </div>
