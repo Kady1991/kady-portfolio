@@ -20,7 +20,7 @@ body {
 }
 
 .icon-link:hover {
-  color: #e8d6c4; /* Couleur au survol */
+  color: #fff4e9; /* Couleur au survol */
 }
 
 
@@ -38,3 +38,19 @@ body {
   transition: background-color 0.8s ease-in-out; /* Transition de 0.5 seconde avec une fonction d'interpolation ease-in-out */
 }
 
+
+.text-animation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.langage-icons-container {
+  display: flex;
+  justify-content: center;
+}
+
+.bouton-apropos-container {
+  margin-top: 20px; /* Ajoute un espace au-dessus du bouton */
+}

@@ -58,7 +58,7 @@ const Home = () => {
   return (
     <Content
       style={{
-        minHeight: "80vh",
+        minHeight: "70vh",
         marginRight: "50px",
         marginLeft: "250px", // Ajustement de la marge à gauche pour le menu vertical
         display: "flex",
@@ -70,25 +70,24 @@ const Home = () => {
         zIndex: 1,
       }}
     >
-      <div style={{ width: "70%" }}>
-        <div className="container" style={{ display: "flex", alignItems: "center" }}>
-          <div className="image-animation">
-            <img className="rounded-full" width={1300} src={img} alt="" style={{ marginRight: "40px" }} />
-          </div>
-          <div className="text-animation m-20">
-              
-            <h1 className="text-5xl font-semibold text-white leading-tight bg-iconBrun h:20 w:5/6 opacity:1">
-              Je suis Kady
-            </h1>
-              <span className="block text-hoverBouton m-4"> Front-end Developer</span>
-            <p className="text-texte">
-              J'opte pour la passionnante démarche de me former en développement
-              frontend, nourrissant mon intérêt pour la création des expériences
-              utilisateur exceptionnelles.en développement
-              frontend, nourrissant mon intérêt pour la création des expériences
-              utilisateur exceptionnelles.
-            </p>
-          </div>
+      <div className="flex flex-col justify-center lg:flex-row items-center w-3/4 px-5 bg-brunClaire h-20 m-20">
+        <div className="flex flex-col items-center text-center lg:text-start lg:items-start lg:w-5/6 m-4 space-y text-animation m-auto">
+          <h1 className="text-5xl font-semibold text-iconBrun leading-tight mb-20">
+            Je suis Kady
+            <span className="block text-hoverBouton m-4"> Front-end Developer</span>
+          </h1>
+          <p className="text-texte w-full ">
+            J'opte pour la passionnante démarche de me former en développement
+            frontend, nourrissant mon intérêt pour la création des expériences
+            utilisateur exceptionnelles.en développement
+            frontend, nourrissant mon intérêt pour la création des expériences
+            utilisateur exceptionnelles.
+          </p>
+        
+        </div>
+
+        <div className="flex items-center justify-center mt-50 image-animation">
+          <img className="rounded-full" width={450} src={img} alt="" />
         </div>
       </div>
     </Content>

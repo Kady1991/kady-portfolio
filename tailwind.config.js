@@ -1,5 +1,3 @@
-// tailwind.config.js
-
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -18,8 +16,17 @@ module.exports = {
         barrekills: "#e4dbd3",
         nuancebarre: "#93775a",
         nuanceBlack: "010101",
+        cc: '#9f7a56',
+        dd: '#8c6951',
+        
       },
+    },
+  },
+  colors: {
+    custom: {
+      
     },
   },
   plugins: [],
 };
+
