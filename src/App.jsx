@@ -9,6 +9,7 @@ import Project from './components/Project';
 import Education from './components/Education';
 import Footer from './components/Footer';
 
+
 const App = () => {
   return (
     <Router>

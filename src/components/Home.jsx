@@ -58,33 +58,37 @@ const Home = () => {
   return (
     <Content
       style={{
-        minHeight: "100vh",
-        padding: "50px",
-        maxWidth: "100%",
+        minHeight: "80vh",
+        marginRight: "50px",
+        marginLeft: "250px", // Ajustement de la marge à gauche pour le menu vertical
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        margin: "auto",
+        marginBottom: "20px",
+        overflowX: "hidden",
+        position: "relative",
+        zIndex: 1,
       }}
     >
-      <div className="flex flex-col justify-center lg:flex-row items-center lg:px-32 px-5 bg-brunClaire">
-        <div className="flex flex-col items-center text-center lg:text-start lg:items-start w-full lg:w-5/6 space-y text-animation m-20  m-auto">
-          <h1 className="text-5xl font-semibold text-iconBrun leading-tight mt-24">
-            Je suis Kady
-            <span className="block text-hoverBouton"> Front-end Developer</span>
-          </h1>
-          <p className="text-texte w-5/6">
-            J'opte pour la passionnante démarche de me former en développement
-            frontend, nourrissant mon intérêt pour la création des expériences
-            utilisateur exceptionnelles.en développement
-            frontend, nourrissant mon intérêt pour la création des expériences
-            utilisateur exceptionnelles.
-          </p>
-        
-        </div>
-
-        <div className="flex items-center justify-center mt-50 image-animation">
-          <img className="rounded-full" width={450} src={img} alt="" />
+      <div style={{ width: "70%" }}>
+        <div className="container" style={{ display: "flex", alignItems: "center" }}>
+          <div className="image-animation">
+            <img className="rounded-full" width={1300} src={img} alt="" style={{ marginRight: "40px" }} />
+          </div>
+          <div className="text-animation m-20">
+              
+            <h1 className="text-5xl font-semibold text-white leading-tight bg-iconBrun h:20 w:5/6 opacity:1">
+              Je suis Kady
+            </h1>
+              <span className="block text-hoverBouton m-4"> Front-end Developer</span>
+            <p className="text-texte">
+              J'opte pour la passionnante démarche de me former en développement
+              frontend, nourrissant mon intérêt pour la création des expériences
+              utilisateur exceptionnelles.en développement
+              frontend, nourrissant mon intérêt pour la création des expériences
+              utilisateur exceptionnelles.
+            </p>
+          </div>
         </div>
       </div>
     </Content>

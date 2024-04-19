@@ -2,12 +2,12 @@ import React from 'react';
 import { IoCodeSlash } from 'react-icons/io5';
 
 // Importe les images
-import M1 from '../assets/img/M1.png';
-import M2 from '../assets/img/M2.png';
-import M3 from '../assets/img/M3.png';
-import M4 from '../assets/img/M4.png';
-import M5 from '../assets/img/M5.png';
-import M6 from '../assets/img/M6.png';
+import M1 from '../assets/img/im1.png';
+import M2 from '../assets/img/im2.png';
+import M3 from '../assets/img/im3.png';
+import M4 from '../assets/img/im4.png';
+import M5 from '../assets/img/im5.png';
+import M6 from '../assets/img/im6.png';
 
 const Project = () => {
   const videoUrls = [

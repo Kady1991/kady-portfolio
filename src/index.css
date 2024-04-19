@@ -11,10 +11,10 @@ body {
   font-size: 1.3rem;
 }
 
-.menu > * {
+/* .menu > * {
   margin-right: 3rem;
-  color: "iconBrun"; /* Utilisation de la classe sans guillemets */
-}
+  color: "iconBrun"; 
+} */
 
 
 .floting-icon {
@@ -30,13 +30,8 @@ body {
   }
 }
 
-/* 
-.menu-item:hover {
-  background-color: #1890ff; 
+.custom-menu-item.ant-menu-item-selected {
+  background-color: #9f7a56; /* Remplacez cette couleur par celle de votre choix */
+  transition: background-color 0.8s ease-in-out; /* Transition de 0.5 seconde avec une fonction d'interpolation ease-in-out */
 }
-.menu-item:active {
-  background-color: #096dd9; 
-} */
-
-
 

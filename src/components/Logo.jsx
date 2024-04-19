@@ -1,6 +1,6 @@
 // Logo.jsx
 import React from "react";
-import logoImage from "../assets/img/loGr.png"; // Importez l'image que vous souhaitez utiliser
+import logoImage from "../assets/img/kady.jpeg"; // Importez l'image que vous souhaitez utiliser
 
 const LogoComponent = () => {
   return (
