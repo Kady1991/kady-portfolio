@@ -2,12 +2,35 @@ import React, { useEffect } from 'react';
 import { SiHtml5, SiJavascript, SiWordpress, SiReact, SiTailwindcss, SiBootstrap, SiGithub } from 'react-icons/si';
 import { FaPhp } from 'react-icons/fa';
 import SkillItem from "../layouts/SkillItem";
-import gsap from "gsap"; // Import de GreenSock pour les animations
+import gsap, { Power3 } from "gsap"; // Import de GreenSock pour les animations
 
-// Fonction d'animation des compétences
 const animateSkills = () => {
-    // Animation des compétences ici, par exemple :
-    gsap.from(".skill-item", { opacity: 0, y: 50, stagger: 0.2 });
+    const textElement = ".text-texte"; // Sélecteur de la classe de l'élément texte
+    const imageElement = ".text-iconBrun"; // Sélecteur de la classe de l'élément image
+
+    gsap.set([textElement, imageElement], { opacity: 0 });
+
+    gsap.fromTo(
+        imageElement,
+        { y: -200, opacity: 0 },
+        {
+            y: 0,
+            opacity: 1,
+            duration: 2,
+            ease: Power3.easeOut, // Correction de la référence à Power3.easeOut
+        }
+    );
+
+    gsap.fromTo(
+        textElement,
+        { x: -200, opacity: 0 },
+        {
+            x: 0,
+            opacity: 1,
+            duration: 3,
+            ease: Power3.easeOut, // Correction de la référence à Power3.easeOut
+        }
+    );
 };
 
 const Skills = () => {
@@ -16,8 +39,7 @@ const Skills = () => {
     }, []);
 
     return (
-        <div className="flex bg-brunClaire h-screen py-10">
-
+        <div className="flex bg-white h-screen py-10">
             <div className="flex flex-col items-center justify-center w-1/5"> {/* Menu vertical */}
                 {/* Votre menu ici */}
             </div>
@@ -28,7 +50,7 @@ const Skills = () => {
                         Le composant Skills est une représentation visuelle de mes compétences en développement web. Chaque compétence,
                         telles que HTML/CSS, JavaScript, WordPress, React, Tailwind CSS, Bootstrap et GitHub, est illustrée par une
                         icône reconnaissable. Les barres de progression colorées indiquent le niveau de maîtrise de chaque compétence,
-                        offrant ainsi une vue rapide et informative de mes compétences techniques. 
+                        offrant ainsi une vue rapide et informative de mes compétences techniques.
                     </p>
                 </div>
                 <div className="grid grid-cols-2 gap-3 w-5/6"> {/* Ajustement de la largeur de la grille */}

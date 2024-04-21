@@ -18,6 +18,8 @@ module.exports = {
         nuanceBlack: "010101",
         cc: '#9f7a56',
         dd: '#8c6951',
+        beigeClair: '#F5F5DC',
+        ttClaire:'#DCDCDC',
         
       },
     },
