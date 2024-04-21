@@ -1,97 +1,30 @@
-import React, { useEffect } from "react";
-import img from "../assets/img/moi.png";
-import { gsap, Power3 } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Layout } from "antd";
-
-const { Content } = Layout;
-
-gsap.registerPlugin(ScrollTrigger);
+import React from 'react';
+import { Link } from 'react-router-dom'; // Importer Link depuis React Router
+import home3 from "../assets/img/home3.jpg"; // Assurez-vous que le chemin d'importation est correct
 
 const Home = () => {
-  const animateElements = (textElement, imageElement) => {
-    gsap.set([textElement, imageElement], { opacity: 0 });
-
-    gsap.fromTo(
-      imageElement,
-      { y: -200, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 2,
-        ease: Power3.easeOut,
-      }
-    );
-
-    gsap.fromTo(
-      textElement,
-      { x: -200, opacity: 0 },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 3,
-        ease: Power3.easeOut,
-      }
-    );
-  };
-
-  useEffect(() => {
-    const textElement = document.querySelector(".text-animation");
-    const imageElement = document.querySelector(".image-animation");
-
-    animateElements(textElement, imageElement);
-
-    const scrollTrigger = ScrollTrigger.create({
-      trigger: textElement,
-      start: "top center",
-      onEnter: () => {
-        animateElements(textElement, imageElement);
-      },
-    });
-
-    return () => {
-      // Limitez le nettoyage de ScrollTrigger lors du démontage du composant
-      scrollTrigger.kill();
-    };
-  }, []);
-
   return (
-    <Content
-      style={{
-        minHeight: "70vh",
-        marginRight: "50px",
-        marginLeft: "250px", // Ajustement de la marge à gauche pour le menu vertical
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        marginBottom: "20px",
-        overflowX: "hidden",
-        position: "relative",
-        zIndex: 1,
-      }}
-    >
-      <div className="flex flex-col justify-center lg:flex-row items-center w-3/4 px-5 bg-brunClaire h-20 m-20">
-        <div className="flex flex-col items-center text-center lg:text-start lg:items-start lg:w-5/6 m-4 space-y text-animation m-auto">
-          <h1 className="text-5xl font-semibold text-iconBrun leading-tight mb-20">
-            Je suis Kady
-            <span className="block text-hoverBouton m-4"> Front-end Developer</span>
-          </h1>
-          <p className="text-texte w-full ">
-            J'opte pour la passionnante démarche de me former en développement
-            frontend, nourrissant mon intérêt pour la création des expériences
-            utilisateur exceptionnelles.en développement
-            frontend, nourrissant mon intérêt pour la création des expériences
-            utilisateur exceptionnelles.
-          </p>
-        
-        </div>
+    <div className="relative h-screen">
+      {/* Image de fond avec filtre */}
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${home3})`, filter: 'brightness(50%)' }} />
 
-        <div className="flex items-center justify-center mt-50 image-animation">
-          <img className="rounded-full" width={450} src={img} alt="" />
+      {/* Contenu (texte et bouton) positionné au centre */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center">
+        {/* Conteneur pour le texte et le bouton */}
+        <div className="bg-transparent p-8 rounded-md">
+          <h1 className="text-5xl font-bold text-white mb-4 ">Bienvenue sur mon Portfolio </h1>
+          <p className=" text-5xl text-white mb-8 ">Je suis Kady</p>
+          <p className=" text-3xl text-white mb-8">Frontend Developpeuse Junior</p>
+          {/* Utiliser Link pour créer un lien vers la page "À propos" */}
+          <Link to="/apropos">
+            <button className="bg-cc hover:bg-dd text-white font-bold py-2 px-12 rounded">
+              À propos
+            </button>
+          </Link>
         </div>
       </div>
-    </Content>
+    </div>
   );
-};
+}
 
 export default Home;
