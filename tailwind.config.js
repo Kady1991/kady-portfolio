@@ -20,7 +20,7 @@ module.exports = {
         dd: '#8c6951',
         beigeClair: '#F5F5DC',
         ttClaire:'#DCDCDC',
-        maron:"413428",
+        maron:"#413428",
         
       },
     },

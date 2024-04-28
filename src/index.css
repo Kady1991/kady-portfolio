@@ -57,3 +57,86 @@ body {
 
 /* HOME */
 
+/* style steps */
+
+/* custom.css */
+
+/* Couleur des étapes en cours */
+.ant-steps-item-process .ant-steps-item-icon {
+  background-color: #4d3b2b !important; /* couleur personnalisée */
+  border-color: #4d3b2b !important; /* Bordure avec la même couleur */
+}
+
+/* Couleur de fond des étapes */
+.ant-steps-item:not(.ant-steps-item-process) .ant-steps-item-icon {
+  background-color: #c9ad94 !important; /* Nuance plus claire */
+  border-color: #c9ad94 !important; /* Bordure avec la même couleur */
+  
+}
+
+
+
+/* Largeur de l'icône des étapes */
+.ant-steps-item-icon {
+  width: rem; /* Taille personnalisée */
+  height: 5rem; /* Taille personnalisée */
+  line-height: 5rem; /* Centrage vertical */
+  background-color: #f3f1ef;
+}
+
+/* Style de la bordure des étapes */
+.ant-steps-item-icon {
+  border-radius: 50%; /* Bordure arrondie pour créer un cercle */
+  border-width: 2px; /* Largeur de la bordure */
+  border-style: solid; /* Style de la bordure */
+  color: #f4f2f1 !important;
+  
+}
+
+
+/* custom.css */
+
+/* Couleur de survol des boutons */
+.ant-btn-primary:hover,
+.ant-btn-primary:focus {
+  background-color: #895629 !important; /* Nuance plus claire pour le survol */
+  border-color: #bfa288 !important; /* Couleur de la bordure */
+}
+
+/* Couleur de survol des boutons secondaires */
+.ant-btn:hover,
+.ant-btn:focus {
+  background-color: #895629 !important; /* Nuance plus claire pour le survol */
+  color: #f4f0ee !important; /* Couleur de la bordure */
+  border: #7b5b3e !important;
+}
+
+
+/* custom.css */
+
+/* Couleur de l'icône à l'intérieur des cercles des étapes */
+.ant-steps-item-icon .ant-steps-icon {
+  color: #e8e3df !important; /* Votre couleur personnalisée */
+  font-family: 2rem !important;
+}
+
+/* Couleur du trait qui relie les étapes */
+.ant-steps-item-tail {
+  background-color: #7b5b3e !important; /* Votre couleur personnalisée */
+}
+
+
+/* Couleur du trait qui relie les étapes */
+.ant-steps-item-tail::after {
+  background-color: #7b5b3e !important; /* Votre couleur personnalisée */
+}
+
+.ant-steps-item-title::after {
+  background-color: #7b5b3e !important;
+}
+/* Couleur de survol des boutons de danger */
+/* .ant-btn-danger:hover,
+.ant-btn-danger:focus {
+  background-color: #61050a !important; 
+  border-color: #660308 !important; 
+} */

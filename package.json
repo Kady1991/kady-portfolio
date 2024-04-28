@@ -12,12 +12,9 @@
   "dependencies": {
     "@ant-design/colors": "^7.0.2",
     "@ant-design/icons": "^5.3.6",
-    "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.5",
     "@mui/icons-material": "^5.15.15",
-    "@mui/material": "^5.15.15",
     "animate.css": "^4.1.1",
-    "antd": "^5.16.2",
+    "antd": "^5.16.5",
     "gsap": "^3.12.5",
     "rc-motion": "^2.9.0",
     "react": "^18.2.0",
