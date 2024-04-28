@@ -1,120 +1,131 @@
-import React from 'react';
-import { IoCodeSlash } from 'react-icons/io5';
+import React, { useEffect, useState } from "react";
+import { Card } from "antd";
+import { gsap, Power3 } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Layout, Steps} from "antd";
+import LangageIcons from "../layouts/LangageIcons";
+import { FaBriefcase } from "react-icons/fa"; 
 
-// Importe les images
-import M1 from '../assets/img/im1.png';
-import M2 from '../assets/img/im2.png';
-import M3 from '../assets/img/im3.png';
-import M4 from '../assets/img/im4.png';
-import M5 from '../assets/img/im5.png';
-import M6 from '../assets/img/im6.png';
+
+
+const { Content } = Layout;
+const { Step } = Steps;
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Project = () => {
-  const videoUrls = [
-    'https://www.youtube.com/watch?v=cucVDxvRdLA',
-    'https://www.youtube.com/watch?v=cucVDxvRdLA', // Remplacez 'lien_de_video_2' par votre URL réelle
-    'https://www.youtube.com/watch?v=cucVDxvRdLA', // Remplacez 'lien_de_video_3' par votre URL réelle
-    'https://www.youtube.com/watch?v=cucVDxvRdLA',
-    'https://www.youtube.com/watch?v=cucVDxvRdLA',
-    'https://www.youtube.com/watch?v=cucVDxvRdLA',
-  ];
+  const [currentStep, setCurrentStep] = useState(0); // État de l'étape actuelle
 
-  const openGitHub = () => {
-    window.open('https://github.com/Kady1991?tab=repositories', '_blank');
+  const animateElements = (textElement, iconElement) => {
+    gsap.set([textElement, iconElement], { opacity: 0 });
+
+    gsap.fromTo(
+      iconElement,
+      { y: -200, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 2,
+        ease: Power3.easeOut,
+      }
+    );
+
+    gsap.fromTo(
+      textElement,
+      { y: -200, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 3,
+        ease: Power3.easeOut,
+      }
+    );
   };
 
-  const imagePaths = [M1, M2, M3, M4, M5, M6];
+  useEffect(() => {
+    const textElement = document.querySelector(".text-animation");
+    const iconElement = document.querySelector(".icon-animation");
+
+    animateElements(textElement, iconElement);
+
+    const scrollTrigger = ScrollTrigger.create({
+      trigger: textElement,
+      start: "top center",
+      onEnter: () => {
+        animateElements(textElement, iconElement);
+      },
+    });
+
+    return () => {
+      // Limitez le nettoyage de ScrollTrigger lors du démontage du composant
+      scrollTrigger.kill();
+    };
+  }, []);
+
+  // Fonction pour avancer à l'étape suivante
+  const nextStep = () => {
+    setCurrentStep(currentStep + 1);
+  };
+
+  // Fonction pour revenir à l'étape précédente
+  const prevStep = () => {
+    setCurrentStep(currentStep - 1);
+  };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-experience p-4 md:p-8 w-5/6 m-auto border-solid border-2 border-indigo-800">
-      <h1 className="text-3xl font-bold mb-3 text-center text-boutonBase hover:text-brightColor mt-20">
-        Mes Projets
-      </h1>
-
-      <p className="mb-4 text-center text-black text-light w-5/6 mt-5">
-        Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.
-      </p>
-
-      <div className="flex flex-col items-center mb-4 mt-5">
-        <button
-          className="bg-boutonBase text-white p-2 rounded-md flex items-center"
-          onClick={openGitHub}
-        >
-          <IoCodeSlash className="text-4xl mr-5" />
-          GitHub
-        </button>
+    <Content
+      style={{
+        minHeight: "90vh", // Augmentation de la hauteur minimale
+        marginRight: "50px",
+        marginLeft: "350px", // Ajustement de la marge à gauche pour le menu vertical
+        display: "flex",
+        flexDirection: "column", // Affichage en colonne
+        justifyContent: "flex-start", // Aligner le contenu en haut
+        alignItems: "center", // Centrage vertical
+        marginBottom: "20px",
+        overflowX: "hidden",
+        position: "relative",
+        zIndex: 1,
+      }}
+    >
+      <div className="mt-20 mb-20">
+        <LangageIcons />
       </div>
 
-      {/* Version desktop */}
-      <div className="flex justify-center w-full mt-10 hidden sm:flex">
-        {[1, 2, 3].map((index) => (
-          <div
-            key={index}
-            className="m-10 relative flex flex-col items-center w-1/4"
-          >
-            <a href={videoUrls[index - 1]} target="_blank" rel="noopener noreferrer" className="cursor-pointer">
-              <div className="w-2/3 sm:w-full max-w-md h-auto object-cover rounded-lg  hover:bg-black relative">
-                <img
-                  src={imagePaths[index - 1]} 
-                  alt={`Projet ${index}`}
-                  className="w-full h-full object-cover rounded-lg"
-                />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
-                  <p className="text-white text-xl">Voir le projet</p>
-                </div>
-              </div>
-            </a>
-          </div>
-        ))}
+      <div className="flex flex-col justify-center lg:flex-row items-center w-3/4 px-5 bg-brunClaire h-20 m-10">
+        <div className="flex flex-col items-center text-center lg:text-start lg:items-start lg:w-5/6 m-4 space-y text-animation m-auto">
+          <h1 className="text-5xl font-semibold text-iconBrun leading-tight m-4">
+            Etudes et Formations
+            <span className="block text-hoverBouton m-4">
+              {" "}
+              Au Mali et en Belgique
+            </span>
+          </h1>
+          <p className="text-texte w-full">
+            J'opte pour la passionnante démarche de me former en développement
+            frontend, nourrissant mon intérêt pour la création des expériences
+            utilisateur exceptionnelles.
+          </p>
+        </div>
+
+        <div className="flex items-center justify-center icon-animation">
+          <FaBriefcase className="text-9xl text-cc" style={{ color: '#3F2204', width:"200px"}} />
+        </div>
       </div>
 
-      {/* Version desktop (images 4, 5, 6) */}
-      <div className="flex justify-center mt-2 w-full hidden sm:flex">
-        {[4, 5, 6].map((index) => (
-          <div
-            key={index}
-            className="m-10 relative flex flex-col items-center w-1/4"
-          >
-            <a href={videoUrls[index - 1]} target="_blank" rel="noopener noreferrer" className="cursor-pointer">
-              <div className="w-2/3 sm:w-full max-w-md h-auto object-cover rounded-lg">
-                <img
-                  src={imagePaths[index - 1]} 
-                  alt={`Projet ${index}`}
-                  className="w-full h-full object-cover rounded-lg"
-                />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
-                  <p className="text-white text-xl ">Voir le projet</p>
-                </div>
-              </div>
-            </a>
-          </div>
-        ))}
+      {/* Cartes des projets */}
+      <div className="flex flex-wrap justify-center mt-8">
+        <Card className="m-4" style={{ width: 300 }}>
+          <Card.Meta title="Projet 1" description="Description du projet 1" />
+        </Card>
+        <Card className="m-4" style={{ width: 300 }}>
+          <Card.Meta title="Projet 2" description="Description du projet 2" />
+        </Card>
+        <Card className="m-4" style={{ width: 300 }}>
+          <Card.Meta title="Projet 3" description="Description du projet 3" />
+        </Card>
       </div>
-
-      {/* Version GSM */}
-      <div className="flex flex-col items-center w-full mt-10 sm:hidden">
-        {[1, 2, 3, 4, 5, 6].map((index) => (
-          <div
-            key={index}
-            className="m-5 relative flex flex-col items-center w-full"
-          >
-            <a href={videoUrls[index - 1]} target="_blank" rel="noopener noreferrer" className="cursor-pointer">
-              <div className="w-full h-auto object-cover rounded-lg shadow-lg shadow-nuanceBlack relative">
-                <img
-                  src={imagePaths[index - 1]} 
-                  alt={`Projet ${index}`}
-                  className="w-full h-full object-cover rounded-lg"
-                />
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition duration-300">
-                  <p className="text-white text-xl">Voir le projet</p>
-                </div>
-              </div>
-            </a>
-          </div>
-        ))}
-      </div>
-
-    </div>
+    </Content>
   );
 };
 

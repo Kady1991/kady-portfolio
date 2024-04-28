@@ -108,7 +108,7 @@ const Education = () => {
         </div>
 
         <div className="flex items-center justify-center icon-animation">
-          <FaSchool className="text-9xl text-cc" />
+          <FaSchool className="text-9xl text-cc" style={{ color: '#3F2204', width:"200px"}} />
         </div>
       </div>
 
