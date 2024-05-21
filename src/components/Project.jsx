@@ -95,10 +95,10 @@ const Project = () => {
       <div className="flex flex-col justify-center lg:flex-row items-center w-3/4 px-5 bg-brunClaire h-20 m-10">
         <div className="flex flex-col items-center text-center lg:text-start lg:items-start lg:w-5/6 m-4 space-y text-animation m-auto">
           <h1 className="text-5xl font-semibold text-iconBrun leading-tight m-4">
-            Etudes et Formations
+            Projets
             <span className="block text-hoverBouton m-4">
               {" "}
-              Au Mali et en Belgique
+              
             </span>
           </h1>
           <p className="text-texte w-full">
