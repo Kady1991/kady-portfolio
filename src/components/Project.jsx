@@ -1,22 +1,18 @@
-import React, { useEffect, useState } from "react";
-import { Card } from "antd";
+import React, { useEffect } from "react";
+import { Card, Layout } from "antd";
 import { gsap, Power3 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Layout, Steps} from "antd";
 import LangageIcons from "../layouts/LangageIcons";
 import { FaBriefcase } from "react-icons/fa"; 
 
-
-
 const { Content } = Layout;
-const { Step } = Steps;
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Project = () => {
-  const [currentStep, setCurrentStep] = useState(0); // État de l'étape actuelle
-
   const animateElements = (textElement, iconElement) => {
+    if (!textElement || !iconElement) return;
+
     gsap.set([textElement, iconElement], { opacity: 0 });
 
     gsap.fromTo(
@@ -46,42 +42,33 @@ const Project = () => {
     const textElement = document.querySelector(".text-animation");
     const iconElement = document.querySelector(".icon-animation");
 
-    animateElements(textElement, iconElement);
+    if (textElement && iconElement) {
+      animateElements(textElement, iconElement);
 
-    const scrollTrigger = ScrollTrigger.create({
-      trigger: textElement,
-      start: "top center",
-      onEnter: () => {
-        animateElements(textElement, iconElement);
-      },
-    });
+      const scrollTrigger = ScrollTrigger.create({
+        trigger: textElement,
+        start: "top center",
+        onEnter: () => {
+          animateElements(textElement, iconElement);
+        },
+      });
 
-    return () => {
-      // Limitez le nettoyage de ScrollTrigger lors du démontage du composant
-      scrollTrigger.kill();
-    };
+      return () => {
+        scrollTrigger.kill();
+      };
+    }
   }, []);
-
-  // Fonction pour avancer à l'étape suivante
-  const nextStep = () => {
-    setCurrentStep(currentStep + 1);
-  };
-
-  // Fonction pour revenir à l'étape précédente
-  const prevStep = () => {
-    setCurrentStep(currentStep - 1);
-  };
 
   return (
     <Content
       style={{
-        minHeight: "90vh", // Augmentation de la hauteur minimale
+        minHeight: "90vh",
         marginRight: "50px",
-        marginLeft: "350px", // Ajustement de la marge à gauche pour le menu vertical
+        marginLeft: "350px",
         display: "flex",
-        flexDirection: "column", // Affichage en colonne
-        justifyContent: "flex-start", // Aligner le contenu en haut
-        alignItems: "center", // Centrage vertical
+        flexDirection: "column",
+        justifyContent: "flex-start",
+        alignItems: "center",
         marginBottom: "20px",
         overflowX: "hidden",
         position: "relative",
@@ -93,30 +80,26 @@ const Project = () => {
       </div>
 
       <div className="flex flex-col justify-center lg:flex-row items-center w-3/4 px-5 bg-brunClaire h-20 m-10">
-        <div className="flex flex-col items-center text-center lg:text-start lg:items-start lg:w-5/6 m-4 space-y text-animation m-auto">
+        <div className="flex flex-col items-center text-center lg:text-start lg:items-start lg:w-5/6 m-4 text-animation">
           <h1 className="text-5xl font-semibold text-iconBrun leading-tight m-4">
             Projets
-            <span className="block text-hoverBouton m-4">
-              {" "}
-              
-            </span>
           </h1>
-          <p className="text-texte w-full">
-            J'opte pour la passionnante démarche de me former en développement
-            frontend, nourrissant mon intérêt pour la création des expériences
+          {/* <p className="text-texte w-full">
+            J&apos;opte pour la passionnante démarche de me former en développement
+            frontend, nourrissant mon intérêt pour la création d&apos;expériences
             utilisateur exceptionnelles.
-          </p>
+          </p> */}
         </div>
 
         <div className="flex items-center justify-center icon-animation">
-          <FaBriefcase className="text-9xl text-cc" style={{ color: '#3F2204', width:"200px"}} />
+          <FaBriefcase className="text-9xl" style={{ color: '#3F2204', width: "200px" }} />
         </div>
       </div>
 
       {/* Cartes des projets */}
       <div className="flex flex-wrap justify-center mt-8">
         <Card className="m-4" style={{ width: 300 }}>
-          <Card.Meta title="Projet1" description="Description du projet 1" />
+          <Card.Meta title="Projet 1" description="Description du projet 1" />
         </Card>
         <Card className="m-4" style={{ width: 300 }}>
           <Card.Meta title="Projet 2" description="Description du projet 2" />
