@@ -13,16 +13,23 @@ body {
 
 .icon-link {
   margin-right: 10px;
-  color: #9f7a56; /* Couleur par défaut des icônes */
+  color: #f9f6f4;
+   /* Couleur par défaut des icônes */
   transition: color 0.3s ease; /* Transition de couleur au survol */
   font-size: 1.8rem;
   margin: 1rem;
 }
 
 .icon-link:hover {
-  color: #fff4e9; /* Couleur au survol */
+  color: #9f7a56;
+   /* Couleur au survol */
 }
 
+/* .active-link {
+  background: #9f7a56 !important;
+  font-weight: bold;
+  text-decoration: underline;
+} */
 
 @keyframes float {
   0%, 100% {

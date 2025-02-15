@@ -43,56 +43,43 @@ const Navbar = ({ menu, closeMenu, handleChange }) => {
           background: "#170D06",
         }}
       >
-        <Menu.Item key="1" style={{ fontSize: "25px" }}>
-          <NavLink
-            to="/"
-            className={({ isActive }) => (isActive ? "active-link" : "")}
-            style={{ color: "#fff", textDecoration: "none", fontSize: "25px" }}
-            onClick={closeMenu}
+        {[
+          { key: "1", to: "/", label: "Home" },
+          { key: "2", to: "/apropos", label: "About me" },
+          { key: "3", to: "/services", label: "Services" },
+          { key: "4", to: "/education", label: "Education" },
+          { key: "5", to: "/portfolio", label: "Portfolio" },
+        ].map((item) => (
+          <Menu.Item
+            key={item.key}
+            style={{
+              fontSize: "25px",
+              background: "transparent", // ✅ Supprime le fond bleu d'Ant Design
+              transition: "all 0.3s ease-in-out",
+            }}
           >
-            Home
-          </NavLink>
-        </Menu.Item>
-        <Menu.Item key="2" style={{ fontSize: "25px" }}>
-          <NavLink
-            to="/apropos"
-            className={({ isActive }) => (isActive ? "active-link" : "")}
-            style={{ color: "#fff", textDecoration: "none", fontSize: "25px" }}
-            onClick={closeMenu}
-          >
-            About me
-          </NavLink>
-        </Menu.Item>
-        <Menu.Item key="3" style={{ fontSize: "25px" }}>
-          <NavLink
-            to="/services"
-            className={({ isActive }) => (isActive ? "active-link" : "")}
-            style={{ color: "#fff", textDecoration: "none", fontSize: "25px" }}
-            onClick={closeMenu}
-          >
-            Services
-          </NavLink>
-        </Menu.Item>
-        <Menu.Item key="4" style={{ fontSize: "25px" }}>
-          <NavLink
-            to="/education"
-            className={({ isActive }) => (isActive ? "active-link" : "")}
-            style={{ color: "#fff", textDecoration: "none", fontSize: "25px" }}
-            onClick={closeMenu}
-          >
-            Education
-          </NavLink>
-        </Menu.Item>
-        <Menu.Item key="5" style={{ fontSize: "25px" }}>
-          <NavLink
-            to="/portfolio"
-            className={({ isActive }) => (isActive ? "active-link" : "")}
-            style={{ color: "#fff", textDecoration: "none", fontSize: "25px" }}
-            onClick={closeMenu}
-          >
-            Portfolio
-          </NavLink>
-        </Menu.Item>
+            <NavLink
+              to={item.to}
+              className={({ isActive }) =>
+                isActive
+                  ? "active-link"
+                  : ""
+              }
+              style={({ isActive }) => ({
+                color: isActive ? "#9f7a56" : "#fff", // ✅ Jaune doré si actif, blanc sinon
+                fontWeight: isActive ? "bold" : "normal",
+                textDecoration: isActive ? "underline" : "none",
+                padding: "10px 15px", // ✅ Ajout de padding pour meilleure visibilité
+                display: "block",
+                borderRadius: "5px",
+                transition: "color 0.3s ease-in-out",
+              })}
+              onClick={closeMenu}
+            >
+              {item.label}
+            </NavLink>
+          </Menu.Item>
+        ))}
       </Menu>
 
       <div className="icons">

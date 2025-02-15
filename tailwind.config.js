@@ -1,3 +1,4 @@
+/* eslint-env node */
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
@@ -15,21 +16,14 @@ module.exports = {
         hoverNavbar: "#DEB887",
         barrekills: "#e4dbd3",
         nuancebarre: "#93775a",
-        nuanceBlack: "010101",
-        cc: '#9f7a56',
-        dd: '#8c6951',
-        beigeClair: '#F5F5DC',
-        ttClaire:'#DCDCDC',
-        maron:"#413428",
-        
+        nuanceBlack: "#010101",
+        cc: "#9f7a56",
+        dd: "#8c6951",
+        beigeClair: "#F5F5DC",
+        ttClaire: "#DCDCDC",
+        maron: "#413428",
       },
-    },
-  },
-  colors: {
-    custom: {
-      
     },
   },
   plugins: [],
 };
-

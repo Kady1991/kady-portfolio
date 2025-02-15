@@ -59,43 +59,42 @@ const Home = () => {
   return (
     <Content
       style={{
-        minHeight: "70vh",
+        minHeight: "80vh", // Augmentation de la hauteur minimale
         marginRight: "50px",
         marginLeft: "350px", // Ajustement de la marge à gauche pour le menu vertical
         display: "flex",
         flexDirection: "column", // Affichage en colonne
-        justifyContent: "center", // Centrage horizontal
+        justifyContent: "flex-start", // Aligner le contenu en haut
         alignItems: "center", // Centrage vertical
-        marginBottom: "20px",
+        marginTop: "50px",
         overflowX: "hidden",
         position: "relative",
         zIndex: 1,
       }}
+      
       >
-      <div className="mb-20">
+      <div className="mt-20">
         <LangageIcons/>
       </div>
 
-      <div className="flex flex-col justify-center lg:flex-row items-center w-3/4 px-5 bg-brunClaire h-20 m-20">
-        <div className="flex flex-col items-center text-center lg:text-start lg:items-start lg:w-5/6 m-4 space-y text-animation m-auto">
-          <h1 className="text-5xl font-semibold text-iconBrun leading-tight m-4">
-            Je suis Kady
-            <span className="block text-hoverBouton m-4"> Front-end Developer Junior</span>
-          </h1>
-          <p className="text-texte w-full ">
-            J'opte pour la passionnante démarche de me former en développement
-            frontend, nourrissant mon intérêt pour la création des expériences
-            utilisateur exceptionnelles.en développement
-            frontend, nourrissant mon intérêt pour la création des expériences
-            utilisateur exceptionnelles.
-          </p>
-        
-        </div>
+      <div className="flex flex-col justify-center lg:flex-row items-center w-3/4 px-5 bg-brunClaire h-20 mb-20 mt-40">
+  <div className="flex flex-col items-center text-center lg:text-start lg:items-start lg:w-5/6 m-4 space-y text-animation m-auto">
+    <h1 className="text-5xl font-semibold text-iconBrun leading-tight m-4">
+      Kady SANGARE
+      <span className="block text-hoverBouton m-4"> Front-end Developer Junior</span>
+    </h1>
+    <p className="text-texte w-full">
+      J&apos;opte pour la passionnante démarche de me former en développement
+      frontend, nourrissant mon intérêt pour la création d&apos;expériences
+      utilisateur exceptionnelles.
+    </p>
+  </div>
 
-        <div className="flex items-center justify-center mt-50 image-animation">
-          <img className="rounded-full" width={450} src={img} alt="" />
-        </div>
-      </div>
+  <div className="flex items-center justify-center mt-20 lg:mt-0 image-animation">
+    <img className="rounded-full" width={450} src={img} alt="Kady SANGARE" />
+  </div>
+</div>
+
     </Content>
   );
 };
