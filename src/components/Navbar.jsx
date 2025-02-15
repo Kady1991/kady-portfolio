@@ -48,7 +48,7 @@ const Navbar = ({ menu, closeMenu, handleChange }) => {
           className="custom-menu-item"
         >
           <NavLink
-            exact
+            
             to="/"
             style={{ color: "#fff", textDecoration: "none", fontSize: "25px" }}
             onClick={closeMenu}

@@ -116,7 +116,7 @@ const Project = () => {
       {/* Cartes des projets */}
       <div className="flex flex-wrap justify-center mt-8">
         <Card className="m-4" style={{ width: 300 }}>
-          <Card.Meta title="Projet 1" description="Description du projet 1" />
+          <Card.Meta title="Projet1" description="Description du projet 1" />
         </Card>
         <Card className="m-4" style={{ width: 300 }}>
           <Card.Meta title="Projet 2" description="Description du projet 2" />

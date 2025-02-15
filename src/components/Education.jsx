@@ -101,7 +101,7 @@ const Education = () => {
             </span>
           </h1>
           <p className="text-texte w-full">
-            J'opte pour la passionnante démarche de me former en développement
+            Je choisie la passionnante démarche de me former en développement
             frontend, nourrissant mon intérêt pour la création des expériences
             utilisateur exceptionnelles.
           </p>
