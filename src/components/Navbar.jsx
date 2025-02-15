@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 import { Menu, Layout } from "antd";
 import { CloseOutlined, MenuOutlined } from "@ant-design/icons";
@@ -42,73 +43,52 @@ const Navbar = ({ menu, closeMenu, handleChange }) => {
           background: "#170D06",
         }}
       >
-        <Menu.Item
-          key="1"
-          style={{ fontSize: "25px" }}
-          className="custom-menu-item"
-        >
+        <Menu.Item key="1" style={{ fontSize: "25px" }}>
           <NavLink
-            
             to="/"
+            className={({ isActive }) => (isActive ? "active-link" : "")}
             style={{ color: "#fff", textDecoration: "none", fontSize: "25px" }}
             onClick={closeMenu}
-            activeStyle={{ color: "#FCDFAE" }}
           >
             Home
           </NavLink>
         </Menu.Item>
-        <Menu.Item
-          key="2"
-          style={{ fontSize: "25px" }}
-          className="custom-menu-item"
-        >
+        <Menu.Item key="2" style={{ fontSize: "25px" }}>
           <NavLink
             to="/apropos"
+            className={({ isActive }) => (isActive ? "active-link" : "")}
             style={{ color: "#fff", textDecoration: "none", fontSize: "25px" }}
             onClick={closeMenu}
-            activeStyle={{ color: "#FCDFAE" }}
           >
             About me
           </NavLink>
         </Menu.Item>
-        <Menu.Item
-          key="3"
-          style={{ fontSize: "25px" }}
-          className="custom-menu-item"
-        >
+        <Menu.Item key="3" style={{ fontSize: "25px" }}>
           <NavLink
             to="/services"
+            className={({ isActive }) => (isActive ? "active-link" : "")}
             style={{ color: "#fff", textDecoration: "none", fontSize: "25px" }}
             onClick={closeMenu}
-            activeStyle={{ color: "#FCDFAE" }}
           >
             Services
           </NavLink>
         </Menu.Item>
-        <Menu.Item
-          key="4"
-          style={{ fontSize: "25px" }}
-          className="custom-menu-item"
-        >
+        <Menu.Item key="4" style={{ fontSize: "25px" }}>
           <NavLink
             to="/education"
+            className={({ isActive }) => (isActive ? "active-link" : "")}
             style={{ color: "#fff", textDecoration: "none", fontSize: "25px" }}
             onClick={closeMenu}
-            activeStyle={{ color: "#FCDFAE" }}
           >
             Education
           </NavLink>
         </Menu.Item>
-        <Menu.Item
-          key="5"
-          style={{ fontSize: "25px" }}
-          className="custom-menu-item"
-        >
+        <Menu.Item key="5" style={{ fontSize: "25px" }}>
           <NavLink
             to="/portfolio"
+            className={({ isActive }) => (isActive ? "active-link" : "")}
             style={{ color: "#fff", textDecoration: "none", fontSize: "25px" }}
             onClick={closeMenu}
-            activeStyle={{ color: "#FCDFAE" }}
           >
             Portfolio
           </NavLink>
@@ -116,24 +96,25 @@ const Navbar = ({ menu, closeMenu, handleChange }) => {
       </Menu>
 
       <div className="icons">
-        {/* SocialIcons component */}
         <SocialIcons />
       </div>
-      {/* <div className="menu-toggle" style={{ paddingBottom: "15px" }}>
+
+      <div className="menu-toggle" style={{ paddingBottom: "15px" }}>
         {menu ? (
-          <CloseOutlined
-            style={{ fontSize: "20px", color: "#fff" }}
-            onClick={handleChange}
-          />
+          <CloseOutlined style={{ fontSize: "20px", color: "#fff" }} onClick={handleChange} />
         ) : (
-          <MenuOutlined
-            style={{ fontSize: "20px", color: "#fff" }}
-            onClick={handleChange}
-          />
+          <MenuOutlined style={{ fontSize: "20px", color: "#fff" }} onClick={handleChange} />
         )}
-      </div> */}
+      </div>
     </Header>
   );
+};
+
+// ✅ Ajout de la validation des props
+Navbar.propTypes = {
+  menu: PropTypes.bool.isRequired,
+  closeMenu: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
 };
 
 export default Navbar;
